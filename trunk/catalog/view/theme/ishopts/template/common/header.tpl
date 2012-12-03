@@ -88,8 +88,7 @@
                         <?php foreach ($categories as $category) { ?>
                             <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
                                 <?php if ($category['children']) { ?>
-                                <ul>
-                                <ul>
+                                    <ul>
                                     <?php for ($i = 0; $i < count($category['children']);) { ?>
                                             <?php $j = $i + ceil(count($category['children']) / $category['column']); ?>
                                             <?php for (; $i < $j; $i++) { ?>
@@ -98,9 +97,8 @@
                                                 <?php } ?>
                                             <?php } ?>
                                     <?php } ?>
-                                <?php } ?>
-                                </ul>
-                                </ul>
+                                <?php } ?>                                
+                                    </ul>
                             </li>
                         <?php } ?>
                     </ul>
