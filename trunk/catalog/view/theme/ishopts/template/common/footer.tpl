@@ -1,4 +1,6 @@
+<div class="footer-wrap">
 <div id="footer">
+<div class="wrapper">
   <?php if ($informations) { ?>
   <div class="column">
     <h3><?php echo $text_information; ?></h3>
@@ -36,6 +38,7 @@
     </ul>
   </div>
 </div>
+</div>
 <!--
 OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
 Please donate via PayPal to donate@opencart.com
@@ -45,5 +48,5 @@ Please donate via PayPal to donate@opencart.com
 OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
 Please donate via PayPal to donate@opencart.com
 //-->
-</div>
+</div></div>
 </body></html>
