@@ -29,6 +29,7 @@
         <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/colorbox/colorbox.css" media="screen" />
         <script type="text/javascript" src="catalog/view/javascript/jquery/tabs.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/common.js"></script>
+        <script type="text/javascript" src="catalog/view/javascript/superfish.js"></script>
         <?php foreach ($scripts as $script) { ?>
             <script type="text/javascript" src="<?php echo $script; ?>"></script>
         <?php } ?>
@@ -43,6 +44,13 @@
         </script>
         <![endif]-->
         <?php echo $google_analytics; ?>
+        <script language="javascript">
+	 
+	$(document).ready(function() {
+	    $('ul.sf-js-enabled').superfish();
+	});
+	 
+	</script>
     </head>
     <body>
         <div id="main-shining">
