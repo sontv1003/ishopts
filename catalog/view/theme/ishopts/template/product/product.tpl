@@ -7,8 +7,9 @@
   </div>
   <h1><?php echo $heading_title; ?></h1>
   <div class="product-info">
+    <div class="wrapper indent-bot">
     <?php if ($thumb || $images) { ?>
-    <div class="left">
+    <div class="fleft left spacing">
       <?php if ($thumb) { ?>
       <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox" rel="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
       <?php } ?>
@@ -21,7 +22,8 @@
       <?php } ?>
     </div>
     <?php } ?>
-    <div class="right">
+
+    <div class="extra-wrap">
       <div class="description">
         <?php if ($manufacturer) { ?>
         <span><?php echo $text_manufacturer; ?></span> <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a><br />
@@ -225,8 +227,10 @@
         </div>
       </div>
       <?php } ?>
+    </div>    
     </div>
   </div>
+  <div class="wrapper mb-1">
   <div id="tabs" class="htabs"><a href="#tab-description"><?php echo $tab_description; ?></a>
     <?php if ($attribute_groups) { ?>
     <a href="#tab-attribute"><?php echo $tab_attribute; ?></a>
@@ -238,6 +242,8 @@
     <a href="#tab-related"><?php echo $tab_related; ?> (<?php echo count($products); ?>)</a>
     <?php } ?>
   </div>
+  </div>
+  <div class="wrapper">
   <div id="tab-description" class="tab-content"><?php echo $description; ?></div>
   <?php if ($attribute_groups) { ?>
   <div id="tab-attribute" class="tab-content">
@@ -294,6 +300,7 @@
     </div>
   </div>
   <?php } ?>
+  </div>
   <?php if ($products) { ?>
   <div id="tab-related" class="tab-content">
     <div class="box-product">

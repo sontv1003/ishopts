@@ -3,7 +3,7 @@
 -- Server version:               5.5.16-log - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2012-12-03 16:25:32
+-- Date/time:                    2012-12-04 19:29:40
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -27,9 +27,9 @@ CREATE TABLE IF NOT EXISTS `address` (
   `zone_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`address_id`),
   KEY `customer_id` (`customer_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table ishopts.address: 0 rows
+-- Dumping data for table ishopts.address: 1 rows
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
 INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `company`, `company_id`, `tax_id`, `address_1`, `address_2`, `city`, `postcode`, `country_id`, `zone_id`) VALUES
 	(1, 1, 'Sơn', 'Trần Văn', '', '', '', 'Abc', '', 'sdgs', '', 230, 3755);
@@ -204,9 +204,9 @@ CREATE TABLE IF NOT EXISTS `banner` (
 -- Dumping data for table ishopts.banner: 3 rows
 /*!40000 ALTER TABLE `banner` DISABLE KEYS */;
 INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
-	(6, 'HP Products', 1),
-	(7, 'Samsung Tab', 1),
-	(8, 'Manufacturers', 1);
+	(6, 'HP Products', 0),
+	(7, 'Samsung Tab', 0),
+	(8, 'Manufacturers', 0);
 /*!40000 ALTER TABLE `banner` ENABLE KEYS */;
 
 
@@ -217,19 +217,20 @@ CREATE TABLE IF NOT EXISTS `banner_image` (
   `link` varchar(255) COLLATE utf8_bin NOT NULL,
   `image` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`banner_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=78 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=89 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table ishopts.banner_image: 8 rows
 /*!40000 ALTER TABLE `banner_image` DISABLE KEYS */;
 INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VALUES
-	(54, 7, 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'data/demo/samsung_banner.jpg'),
-	(77, 6, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/demo/hp_banner.jpg'),
-	(75, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=5', 'data/demo/htc_logo.jpg'),
-	(73, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=8', 'data/demo/apple_logo.jpg'),
-	(74, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=9', 'data/demo/canon_logo.jpg'),
-	(71, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=10', 'data/demo/sony_logo.jpg'),
-	(72, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=6', 'data/demo/palm_logo.jpg'),
-	(76, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/demo/hp_logo.jpg');
+	(81, 7, 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'data/buyer.png'),
+	(88, 6, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/demo/hp_banner.jpg'),
+	(86, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=6', 'data/demo/palm_logo.jpg'),
+	(85, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=10', 'data/demo/sony_logo.jpg'),
+	(84, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=9', 'data/demo/canon_logo.jpg'),
+	(83, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=8', 'data/demo/apple_logo.jpg'),
+	(82, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=5', 'data/demo/htc_logo.jpg'),
+	(80, 7, 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'data/demo/samsung_banner.jpg'),
+	(87, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/demo/hp_logo.jpg');
 /*!40000 ALTER TABLE `banner_image` ENABLE KEYS */;
 
 
@@ -245,22 +246,24 @@ CREATE TABLE IF NOT EXISTS `banner_image_description` (
 -- Dumping data for table ishopts.banner_image_description: 16 rows
 /*!40000 ALTER TABLE `banner_image_description` DISABLE KEYS */;
 INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
-	(54, 1, 7, 'Samsung Tab 10.1'),
-	(77, 1, 6, 'HP Banner'),
-	(75, 1, 8, 'HTC'),
-	(74, 1, 8, 'Canon'),
-	(73, 1, 8, 'Apple'),
-	(72, 1, 8, 'Palm'),
-	(71, 1, 8, 'Sony'),
-	(76, 1, 8, 'Hewlett-Packard'),
-	(73, 3, 8, 'Apple'),
-	(74, 3, 8, 'Canon'),
-	(75, 3, 8, 'HTC'),
-	(77, 3, 6, 'HP Banner'),
-	(54, 3, 7, 'Samsung Tab 10.1'),
-	(72, 3, 8, 'Palm'),
-	(71, 3, 8, 'Sony'),
-	(76, 3, 8, 'Hewlett-Packard');
+	(81, 3, 7, 'Hakema Booking'),
+	(88, 1, 6, 'HP Banner'),
+	(87, 3, 8, 'Hewlett-Packard'),
+	(86, 1, 8, 'Palm'),
+	(86, 3, 8, 'Palm'),
+	(85, 1, 8, 'Sony'),
+	(85, 3, 8, 'Sony'),
+	(84, 1, 8, 'Canon'),
+	(84, 3, 8, 'Canon'),
+	(83, 1, 8, 'Apple'),
+	(88, 3, 6, 'HP Banner'),
+	(80, 1, 7, 'Samsung Tab 10.1'),
+	(83, 3, 8, 'Apple'),
+	(82, 1, 8, 'HTC'),
+	(82, 3, 8, 'HTC'),
+	(80, 3, 7, 'Samsung Tab 10.1'),
+	(81, 1, 7, 'Hakema Booking'),
+	(87, 1, 8, 'Hewlett-Packard');
 /*!40000 ALTER TABLE `banner_image_description` ENABLE KEYS */;
 
 
@@ -278,22 +281,19 @@ CREATE TABLE IF NOT EXISTS `category` (
   PRIMARY KEY (`category_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=59 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table ishopts.category: 38 rows
+-- Dumping data for table ishopts.category: 34 rows
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
-	(25, '', 0, 1, 1, 3, 1, '2009-01-31 01:04:25', '2011-05-30 12:14:55'),
-	(27, '', 20, 0, 0, 2, 1, '2009-01-31 01:55:34', '2010-08-22 06:32:15'),
-	(20, 'data/demo/compaq_presario.jpg', 0, 1, 1, 1, 1, '2009-01-05 21:49:43', '2011-07-16 02:14:42'),
-	(24, '', 0, 1, 1, 5, 1, '2009-01-20 02:36:26', '2011-05-30 12:15:18'),
-	(18, 'data/demo/hp_2.jpg', 0, 1, 0, 2, 1, '2009-01-05 21:49:15', '2011-05-30 12:13:55'),
-	(17, '', 0, 1, 1, 4, 1, '2009-01-03 21:08:57', '2011-05-30 12:15:11'),
+	(25, '', 0, 1, 1, 2, 1, '2009-01-31 01:04:25', '2012-12-04 12:13:29'),
+	(27, '', 20, 0, 0, 2, 1, '2009-01-31 01:55:34', '2012-12-04 12:14:22'),
+	(20, 'data/demo/compaq_presario.jpg', 0, 1, 1, 1, 1, '2009-01-05 21:49:43', '2012-12-04 12:13:04'),
+	(18, 'data/demo/hp_2.jpg', 0, 1, 0, 3, 1, '2009-01-05 21:49:15', '2012-12-04 12:13:44'),
 	(28, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:12', '2010-08-22 06:32:46'),
-	(26, '', 20, 0, 0, 1, 1, '2009-01-31 01:55:14', '2010-08-22 06:31:45'),
+	(26, '', 20, 0, 0, 1, 1, '2009-01-31 01:55:14', '2012-12-04 12:14:14'),
 	(29, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:37', '2010-08-22 06:32:39'),
 	(30, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:59', '2010-08-22 06:33:00'),
 	(31, '', 25, 0, 0, 1, 1, '2009-02-03 14:17:24', '2010-08-22 06:33:06'),
 	(32, '', 25, 0, 0, 1, 1, '2009-02-03 14:17:34', '2010-08-22 06:33:12'),
-	(33, '', 0, 1, 1, 6, 1, '2009-02-03 14:17:55', '2011-05-30 12:15:25'),
 	(34, 'data/demo/ipod_touch_4.jpg', 0, 1, 4, 7, 1, '2009-02-03 14:18:11', '2011-05-30 12:15:31'),
 	(35, '', 28, 0, 0, 0, 1, '2010-09-17 10:06:48', '2010-09-18 14:02:42'),
 	(36, '', 28, 0, 0, 0, 1, '2010-09-17 10:07:13', '2010-09-18 14:02:55'),
@@ -317,7 +317,6 @@ INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `column`, `s
 	(54, '', 34, 0, 0, 0, 1, '2010-11-07 11:29:16', '2011-04-22 01:16:50'),
 	(55, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:32', '2010-11-08 10:31:32'),
 	(56, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:50', '2011-04-22 01:16:37'),
-	(57, '', 0, 1, 1, 3, 1, '2011-04-26 08:53:16', '2011-05-30 12:15:05'),
 	(58, '', 52, 0, 0, 0, 1, '2011-05-08 13:44:16', '2011-05-08 13:44:16');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
@@ -334,20 +333,17 @@ CREATE TABLE IF NOT EXISTS `category_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table ishopts.category_description: 76 rows
+-- Dumping data for table ishopts.category_description: 68 rows
 /*!40000 ALTER TABLE `category_description` DISABLE KEYS */;
 INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(28, 1, 'Monitors', '', '', ''),
-	(33, 1, 'Cameras', '', '', ''),
 	(32, 1, 'Web Cameras', '', '', ''),
 	(31, 1, 'Scanners', '', '', ''),
 	(30, 1, 'Printers', '', '', ''),
 	(29, 1, 'Mice and Trackballs', '', '', ''),
 	(27, 1, 'Mac', '', '', ''),
 	(26, 1, 'PC', '', '', ''),
-	(17, 1, 'Software', '', '', ''),
 	(25, 1, 'Components', '', '', ''),
-	(24, 1, 'Phones &amp; PDAs', '', '', ''),
 	(20, 1, 'Desktops', '&lt;p&gt;\r\n	Example of category description text&lt;/p&gt;\r\n', 'Example of category description', ''),
 	(35, 1, 'test 1', '', '', ''),
 	(36, 1, 'test 2', '', '', ''),
@@ -359,7 +355,6 @@ INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `descr
 	(42, 1, 'test 9', '', '', ''),
 	(43, 1, 'test 11', '', '', ''),
 	(34, 1, 'MP3 Players', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', '', ''),
-	(18, 1, 'Laptops &amp; Notebooks', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', '', ''),
 	(44, 1, 'test 12', '', '', ''),
 	(45, 1, 'Windows', '', '', ''),
 	(46, 1, 'Macs', '', '', ''),
@@ -373,10 +368,10 @@ INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `descr
 	(54, 1, 'test 22', '', '', ''),
 	(55, 1, 'test 23', '', '', ''),
 	(56, 1, 'test 24', '', '', ''),
-	(57, 1, 'Tablets', '', '', ''),
 	(58, 1, 'test 25', '', '', ''),
-	(18, 3, 'Laptops &amp; Notebooks', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', '', ''),
-	(20, 3, 'Desktops', '&lt;p&gt;\r\n	Example of category description text&lt;/p&gt;\r\n', 'Example of category description', ''),
+	(18, 3, 'Phụ kiện', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', '', ''),
+	(18, 1, 'Laptops &amp; Notebooks', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', '', ''),
+	(20, 3, 'Điện thoại (mới)', '&lt;p&gt;\r\n	Example of category description text&lt;/p&gt;\r\n', 'Example of category description', ''),
 	(35, 3, 'test 1', '', '', ''),
 	(36, 3, 'test 2', '', '', ''),
 	(37, 3, 'test 5', '', '', ''),
@@ -387,16 +382,13 @@ INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `descr
 	(42, 3, 'test 9', '', '', ''),
 	(43, 3, 'test 11', '', '', ''),
 	(34, 3, 'MP3 Players', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', '', ''),
-	(24, 3, 'Phones &amp; PDAs', '', '', ''),
-	(25, 3, 'Components', '', '', ''),
-	(17, 3, 'Software', '', '', ''),
-	(26, 3, 'PC', '', '', ''),
-	(27, 3, 'Mac', '', '', ''),
+	(25, 3, 'Điện thoại (cũ)', '', '', ''),
+	(26, 3, 'iPhone 4S', '', '', ''),
+	(27, 3, 'iPhone 5', '', '', ''),
 	(29, 3, 'Mice and Trackballs', '', '', ''),
 	(30, 3, 'Printers', '', '', ''),
 	(31, 3, 'Scanners', '', '', ''),
 	(32, 3, 'Web Cameras', '', '', ''),
-	(33, 3, 'Cameras', '', '', ''),
 	(28, 3, 'Monitors', '', '', ''),
 	(44, 3, 'test 12', '', '', ''),
 	(45, 3, 'Windows', '', '', ''),
@@ -411,7 +403,6 @@ INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `descr
 	(54, 3, 'test 22', '', '', ''),
 	(55, 3, 'test 23', '', '', ''),
 	(56, 3, 'test 24', '', '', ''),
-	(57, 3, 'Tablets', '', '', ''),
 	(58, 3, 'test 25', '', '', '');
 /*!40000 ALTER TABLE `category_description` ENABLE KEYS */;
 
@@ -436,13 +427,11 @@ CREATE TABLE IF NOT EXISTS `category_to_store` (
   PRIMARY KEY (`category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table ishopts.category_to_store: 38 rows
+-- Dumping data for table ishopts.category_to_store: 34 rows
 /*!40000 ALTER TABLE `category_to_store` DISABLE KEYS */;
 INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
-	(17, 0),
 	(18, 0),
 	(20, 0),
-	(24, 0),
 	(25, 0),
 	(26, 0),
 	(27, 0),
@@ -451,7 +440,6 @@ INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 	(30, 0),
 	(31, 0),
 	(32, 0),
-	(33, 0),
 	(34, 0),
 	(35, 0),
 	(36, 0),
@@ -475,7 +463,6 @@ INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 	(54, 0),
 	(55, 0),
 	(56, 0),
-	(57, 0),
 	(58, 0);
 /*!40000 ALTER TABLE `category_to_store` ENABLE KEYS */;
 
@@ -806,15 +793,15 @@ CREATE TABLE IF NOT EXISTS `currency` (
   `status` tinyint(1) NOT NULL,
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`currency_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table ishopts.currency: 3 rows
+-- Dumping data for table ishopts.currency: 4 rows
 /*!40000 ALTER TABLE `currency` DISABLE KEYS */;
 INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
 	(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.62320000, 1, '2012-12-03 08:35:19'),
 	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2012-12-03 08:36:40'),
 	(3, 'Euro', 'EUR', '', '€', '2', 0.76709998, 1, '2012-12-03 08:35:19'),
-	(4, 'VNĐ', 'VND', '', ' Đồng', '', 1.00000000, 1, '2012-12-03 15:48:23');
+	(4, 'VNĐ', 'VND', '', ' Đồng', '', 1.00000000, 1, '2012-12-04 11:46:24');
 /*!40000 ALTER TABLE `currency` ENABLE KEYS */;
 
 
@@ -840,12 +827,12 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `token` varchar(255) COLLATE utf8_bin NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table ishopts.customer: 0 rows
+-- Dumping data for table ishopts.customer: 1 rows
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `customer_group_id`, `ip`, `status`, `approved`, `token`, `date_added`) VALUES
-	(1, 0, 'Sơn', 'Trần Văn', 'transontt@gmail.com', '+84904449512', '', '402e4eb37d3a17b1078e22e6cd93b12652b175dc', '43d7bd7a6', 'a:1:{i:41;i:1;}', '', 0, 1, 1, '127.0.0.1', 1, 1, '', '2012-12-03 15:52:36');
+	(1, 0, 'Sơn', 'Trần Văn', 'transontt@gmail.com', '+84904449512', '', '402e4eb37d3a17b1078e22e6cd93b12652b175dc', '43d7bd7a6', 'a:1:{i:49;i:1;}', 'a:0:{}', 0, 1, 1, '127.0.0.1', 1, 1, '', '2012-12-03 15:52:36');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
 
@@ -893,9 +880,9 @@ CREATE TABLE IF NOT EXISTS `customer_ip` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table ishopts.customer_ip: 0 rows
+-- Dumping data for table ishopts.customer_ip: 1 rows
 /*!40000 ALTER TABLE `customer_ip` DISABLE KEYS */;
 INSERT INTO `customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) VALUES
 	(1, 1, '127.0.0.1', '2012-12-03 15:52:38');
@@ -996,7 +983,7 @@ CREATE TABLE IF NOT EXISTS `extension` (
   `type` varchar(32) COLLATE utf8_bin NOT NULL,
   `code` varchar(32) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=428 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=432 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table ishopts.extension: 20 rows
 /*!40000 ALTER TABLE `extension` DISABLE KEYS */;
@@ -1013,14 +1000,16 @@ INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 	(349, 'total', 'handling'),
 	(350, 'total', 'low_order_fee'),
 	(389, 'total', 'coupon'),
-	(413, 'module', 'category'),
 	(411, 'module', 'affiliate'),
 	(408, 'module', 'account'),
 	(393, 'total', 'reward'),
 	(398, 'total', 'voucher'),
 	(407, 'payment', 'free_checkout'),
 	(427, 'module', 'featured'),
-	(419, 'module', 'slideshow');
+	(431, 'module', 'latest'),
+	(428, 'module', 'special'),
+	(429, 'module', 'bestseller'),
+	(430, 'module', 'welcome');
 /*!40000 ALTER TABLE `extension` ENABLE KEYS */;
 
 
@@ -1168,20 +1157,22 @@ CREATE TABLE IF NOT EXISTS `layout_route` (
   `store_id` int(11) NOT NULL,
   `route` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`layout_route_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table ishopts.layout_route: 9 rows
 /*!40000 ALTER TABLE `layout_route` DISABLE KEYS */;
 INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
-	(30, 6, 0, 'account'),
+	(39, 6, 0, 'account'),
 	(17, 10, 0, 'affiliate/'),
 	(29, 3, 0, 'product/category'),
-	(26, 1, 0, 'common/home'),
-	(20, 2, 0, 'product/product'),
+	(43, 1, 0, 'common/home'),
+	(44, 2, 0, 'product/product'),
 	(24, 11, 0, 'information/information'),
 	(22, 5, 0, 'product/manufacturer'),
 	(23, 7, 0, 'checkout/'),
-	(31, 8, 0, 'information/contact');
+	(31, 8, 0, 'information/contact'),
+	(42, 1, 0, 'module/special'),
+	(45, 2, 0, 'module/special');
 /*!40000 ALTER TABLE `layout_route` ENABLE KEYS */;
 
 
@@ -1728,15 +1719,15 @@ INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`
 	(35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, '', 0, 0, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 18:08:31', '2011-09-30 01:06:17', 0),
 	(36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'data/demo/ipod_nano_1.jpg', 8, 0, 100.0000, 100, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:09:19', '2011-09-30 01:07:12', 0),
 	(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'data/demo/iphone_1.jpg', 8, 1, 101.0000, 0, 9, '2009-02-03', 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:12', '2011-09-30 01:06:53', 0),
-	(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'data/demo/imac_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:26', '2011-09-30 01:06:44', 2),
-	(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'data/demo/apple_cinema_30.jpg', 8, 1, 15000000.0000, 400, 0, '2009-02-04', 12.50000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 2, 0, 1, '2009-02-03 21:07:37', '2012-12-03 15:43:37', 9),
-	(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'data/demo/macbook_1.jpg', 8, 0, 500.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:07:49', '2011-09-30 01:05:46', 1),
+	(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'data/demo/imac_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:26', '2011-09-30 01:06:44', 0),
+	(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'data/demo/apple_cinema_30.jpg', 8, 1, 15000000.0000, 400, 0, '2009-02-04', 12.50000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 2, 0, 1, '2009-02-03 21:07:37', '2012-12-03 15:43:37', 3),
+	(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'data/demo/macbook_1.jpg', 8, 0, 500.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:07:49', '2011-09-30 01:05:46', 11),
 	(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'data/demo/macbook_air_1.jpg', 8, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:00', '2011-09-30 01:05:53', 0),
 	(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'data/demo/macbook_pro_1.jpg', 8, 1, 2000.0000, 0, 100, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:17', '2011-09-15 22:22:01', 0),
-	(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'data/demo/sony_vaio_1.jpg', 10, 1, 15000000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:29', '2012-12-03 15:47:34', 3),
-	(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'data/demo/hp_1.jpg', 7, 1, 100.0000, 400, 9, '2009-02-03', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2011-09-30 01:05:28', 2),
+	(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'data/demo/sony_vaio_1.jpg', 10, 1, 15000000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:29', '2012-12-03 15:47:34', 0),
+	(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'data/demo/hp_1.jpg', 7, 1, 100.0000, 400, 9, '2009-02-03', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2011-09-30 01:05:28', 0),
 	(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'data/demo/ipod_classic_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-08', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0),
-	(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, 199.9900, 0, 9, '2011-04-25', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 5);
+	(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, 199.9900, 0, 9, '2011-04-25', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 2);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
@@ -1836,7 +1827,7 @@ CREATE TABLE IF NOT EXISTS `product_discount` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_discount_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=441 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=447 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table ishopts.product_discount: 3 rows
 /*!40000 ALTER TABLE `product_discount` DISABLE KEYS */;
@@ -1854,7 +1845,7 @@ CREATE TABLE IF NOT EXISTS `product_image` (
   `image` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2352 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=2366 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table ishopts.product_image: 61 rows
 /*!40000 ALTER TABLE `product_image` DISABLE KEYS */;
@@ -2015,7 +2006,7 @@ CREATE TABLE IF NOT EXISTS `product_reward` (
   `customer_group_id` int(11) NOT NULL DEFAULT '0',
   `points` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_reward_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=546 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=549 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table ishopts.product_reward: 19 rows
 /*!40000 ALTER TABLE `product_reward` DISABLE KEYS */;
@@ -2053,7 +2044,7 @@ CREATE TABLE IF NOT EXISTS `product_special` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_special_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=440 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=442 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table ishopts.product_special: 3 rows
 /*!40000 ALTER TABLE `product_special` DISABLE KEYS */;
@@ -2071,16 +2062,12 @@ CREATE TABLE IF NOT EXISTS `product_to_category` (
   PRIMARY KEY (`product_id`,`category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table ishopts.product_to_category: 30 rows
+-- Dumping data for table ishopts.product_to_category: 24 rows
 /*!40000 ALTER TABLE `product_to_category` DISABLE KEYS */;
 INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 	(28, 20),
-	(28, 24),
 	(29, 20),
-	(29, 24),
 	(30, 20),
-	(30, 33),
-	(31, 33),
 	(32, 34),
 	(33, 20),
 	(33, 28),
@@ -2088,7 +2075,6 @@ INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 	(35, 20),
 	(36, 34),
 	(40, 20),
-	(40, 24),
 	(41, 27),
 	(42, 20),
 	(42, 28),
@@ -2102,8 +2088,7 @@ INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 	(47, 18),
 	(47, 20),
 	(48, 20),
-	(48, 34),
-	(49, 57);
+	(48, 34);
 /*!40000 ALTER TABLE `product_to_category` ENABLE KEYS */;
 
 
@@ -2302,7 +2287,7 @@ CREATE TABLE IF NOT EXISTS `setting` (
   `value` text COLLATE utf8_bin NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=222 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=777 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table ishopts.setting: 130 rows
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
@@ -2322,19 +2307,17 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(13, 0, 'cod', 'cod_status', '1', 0),
 	(14, 0, 'shipping', 'shipping_status', '1', 0),
 	(15, 0, 'shipping', 'shipping_estimator', '1', 0),
-	(400, 0, 'config', 'config_encryption', '6b8bc933894c12c52c143a35c6ef3b7d', 0),
-	(399, 0, 'config', 'config_maintenance', '0', 0),
-	(398, 0, 'config', 'config_seo_url', '0', 0),
-	(397, 0, 'config', 'config_use_ssl', '0', 0),
-	(395, 0, 'config', 'config_fraud_score', '', 0),
-	(396, 0, 'config', 'config_fraud_status_id', '7', 0),
-	(394, 0, 'config', 'config_fraud_key', '', 0),
-	(393, 0, 'config', 'config_fraud_detection', '0', 0),
+	(773, 0, 'config', 'config_google_analytics', '', 0),
+	(772, 0, 'config', 'config_error_filename', 'error.txt', 0),
+	(771, 0, 'config', 'config_error_log', '1', 0),
+	(770, 0, 'config', 'config_error_display', '1', 0),
+	(769, 0, 'config', 'config_compression', '0', 0),
+	(768, 0, 'config', 'config_encryption', '6b8bc933894c12c52c143a35c6ef3b7d', 0),
 	(27, 0, 'coupon', 'coupon_sort_order', '4', 0),
 	(28, 0, 'coupon', 'coupon_status', '1', 0),
-	(392, 0, 'config', 'config_alert_emails', '', 0),
-	(391, 0, 'config', 'config_account_mail', '0', 0),
-	(390, 0, 'config', 'config_alert_mail', '0', 0),
+	(767, 0, 'config', 'config_maintenance', '0', 0),
+	(766, 0, 'config', 'config_seo_url', '0', 0),
+	(765, 0, 'config', 'config_use_ssl', '0', 0),
 	(34, 0, 'flat', 'flat_sort_order', '1', 0),
 	(35, 0, 'flat', 'flat_status', '1', 0),
 	(36, 0, 'flat', 'flat_geo_zone_id', '0', 0),
@@ -2345,98 +2328,101 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(41, 0, 'flat', 'flat_cost', '5.00', 0),
 	(42, 0, 'credit', 'credit_sort_order', '7', 0),
 	(43, 0, 'credit', 'credit_status', '1', 0),
-	(389, 0, 'config', 'config_smtp_timeout', '5', 0),
-	(386, 0, 'config', 'config_smtp_username', '', 0),
-	(387, 0, 'config', 'config_smtp_password', '', 0),
-	(388, 0, 'config', 'config_smtp_port', '25', 0),
-	(385, 0, 'config', 'config_smtp_host', '', 0),
-	(384, 0, 'config', 'config_mail_parameter', '', 0),
-	(383, 0, 'config', 'config_mail_protocol', 'mail', 0),
+	(764, 0, 'config', 'config_fraud_status_id', '7', 0),
+	(763, 0, 'config', 'config_fraud_score', '', 0),
+	(762, 0, 'config', 'config_fraud_key', '', 0),
+	(761, 0, 'config', 'config_fraud_detection', '0', 0),
+	(760, 0, 'config', 'config_alert_emails', '', 0),
+	(759, 0, 'config', 'config_account_mail', '0', 0),
+	(758, 0, 'config', 'config_alert_mail', '0', 0),
 	(53, 0, 'reward', 'reward_sort_order', '2', 0),
 	(54, 0, 'reward', 'reward_status', '1', 0),
-	(382, 0, 'config', 'config_image_cart_height', '47', 0),
+	(757, 0, 'config', 'config_smtp_timeout', '5', 0),
 	(56, 0, 'affiliate', 'affiliate_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:2:"10";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(57, 0, 'category', 'category_module', 'a:2:{i:0;a:5:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:5:"count";s:1:"0";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:5:{s:9:"layout_id";s:1:"2";s:8:"position";s:11:"column_left";s:5:"count";s:1:"0";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(381, 0, 'config', 'config_image_cart_width', '47', 0),
-	(380, 0, 'config', 'config_image_wishlist_height', '47', 0),
+	(756, 0, 'config', 'config_smtp_port', '25', 0),
+	(755, 0, 'config', 'config_smtp_password', '', 0),
 	(60, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(379, 0, 'config', 'config_image_wishlist_width', '47', 0),
-	(378, 0, 'config', 'config_image_compare_height', '90', 0),
-	(376, 0, 'config', 'config_image_related_height', '80', 0),
-	(377, 0, 'config', 'config_image_compare_width', '90', 0),
-	(375, 0, 'config', 'config_image_related_width', '80', 0),
-	(373, 0, 'config', 'config_image_additional_width', '74', 0),
-	(374, 0, 'config', 'config_image_additional_height', '74', 0),
-	(371, 0, 'config', 'config_image_product_width', '80', 0),
-	(372, 0, 'config', 'config_image_product_height', '80', 0),
-	(370, 0, 'config', 'config_image_popup_height', '500', 0),
-	(369, 0, 'config', 'config_image_popup_width', '500', 0),
-	(368, 0, 'config', 'config_image_thumb_height', '228', 0),
-	(367, 0, 'config', 'config_image_thumb_width', '228', 0),
-	(365, 0, 'config', 'config_image_category_width', '80', 0),
-	(366, 0, 'config', 'config_image_category_height', '80', 0),
-	(364, 0, 'config', 'config_icon', 'data/cart.png', 0),
-	(363, 0, 'config', 'config_logo', 'data/logo.png', 0),
-	(362, 0, 'config', 'config_return_status_id', '2', 0),
-	(361, 0, 'config', 'config_commission', '5', 0),
-	(360, 0, 'config', 'config_affiliate_id', '4', 0),
-	(359, 0, 'config', 'config_stock_status_id', '5', 0),
+	(754, 0, 'config', 'config_smtp_username', '', 0),
+	(753, 0, 'config', 'config_smtp_host', '', 0),
+	(752, 0, 'config', 'config_mail_parameter', '', 0),
+	(751, 0, 'config', 'config_mail_protocol', 'mail', 0),
+	(750, 0, 'config', 'config_image_cart_height', '47', 0),
+	(749, 0, 'config', 'config_image_cart_width', '47', 0),
+	(748, 0, 'config', 'config_image_wishlist_height', '47', 0),
+	(747, 0, 'config', 'config_image_wishlist_width', '47', 0),
+	(743, 0, 'config', 'config_image_related_width', '80', 0),
+	(744, 0, 'config', 'config_image_related_height', '80', 0),
+	(746, 0, 'config', 'config_image_compare_height', '90', 0),
+	(745, 0, 'config', 'config_image_compare_width', '90', 0),
+	(742, 0, 'config', 'config_image_additional_height', '74', 0),
+	(741, 0, 'config', 'config_image_additional_width', '74', 0),
+	(740, 0, 'config', 'config_image_product_height', '80', 0),
+	(739, 0, 'config', 'config_image_product_width', '80', 0),
+	(736, 0, 'config', 'config_image_thumb_height', '228', 0),
+	(737, 0, 'config', 'config_image_popup_width', '500', 0),
+	(738, 0, 'config', 'config_image_popup_height', '500', 0),
 	(93, 0, 'voucher', 'voucher_sort_order', '8', 0),
 	(94, 0, 'voucher', 'voucher_status', '1', 0),
-	(358, 0, 'config', 'config_stock_checkout', '0', 0),
-	(356, 0, 'config', 'config_stock_display', '0', 0),
-	(357, 0, 'config', 'config_stock_warning', '0', 0),
-	(355, 0, 'config', 'config_complete_status_id', '5', 0),
-	(354, 0, 'config', 'config_order_status_id', '1', 0),
+	(735, 0, 'config', 'config_image_thumb_width', '228', 0),
+	(734, 0, 'config', 'config_image_category_height', '80', 0),
+	(733, 0, 'config', 'config_image_category_width', '80', 0),
+	(732, 0, 'config', 'config_icon', 'data/cart.png', 0),
+	(731, 0, 'config', 'config_logo', 'data/logo.png', 0),
 	(102, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 	(103, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
-	(353, 0, 'config', 'config_invoice_prefix', 'INV-2012-00', 0),
-	(352, 0, 'config', 'config_order_edit', '100', 0),
-	(107, 0, 'slideshow', 'slideshow_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:1:"7";s:5:"width";s:3:"980";s:6:"height";s:3:"280";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(730, 0, 'config', 'config_return_status_id', '2', 0),
+	(729, 0, 'config', 'config_commission', '5', 0),
+	(776, 0, 'latest', 'latest_module', 'a:1:{i:0;a:7:{s:5:"limit";s:1:"5";s:11:"image_width";s:2:"80";s:12:"image_height";s:2:"80";s:9:"layout_id";s:1:"2";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(108, 0, 'banner', 'banner_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"182";s:6:"height";s:3:"182";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
-	(351, 0, 'config', 'config_checkout_id', '5', 0),
-	(349, 0, 'config', 'config_cart_weight', '1', 0),
-	(350, 0, 'config', 'config_guest_checkout', '1', 0),
-	(347, 0, 'config', 'config_customer_price', '0', 0),
-	(348, 0, 'config', 'config_account_id', '3', 0),
-	(345, 0, 'config', 'config_customer_group_id', '1', 0),
-	(346, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
-	(344, 0, 'config', 'config_customer_online', '0', 0),
-	(343, 0, 'config', 'config_tax_customer', 'shipping', 0),
-	(338, 0, 'config', 'config_voucher_min', '1', 0),
-	(342, 0, 'config', 'config_tax_default', 'shipping', 0),
-	(341, 0, 'config', 'config_vat', '0', 0),
-	(340, 0, 'config', 'config_tax', '1', 0),
-	(339, 0, 'config', 'config_voucher_max', '1000', 0),
-	(337, 0, 'config', 'config_upload_allowed', 'jpg, JPG, jpeg, gif, png, txt', 0),
-	(336, 0, 'config', 'config_download', '1', 0),
-	(335, 0, 'config', 'config_review_status', '1', 0),
-	(334, 0, 'config', 'config_product_count', '0', 0),
-	(333, 0, 'config', 'config_admin_limit', '20', 0),
-	(332, 0, 'config', 'config_catalog_limit', '15', 0),
-	(331, 0, 'config', 'config_weight_class_id', '1', 0),
-	(330, 0, 'config', 'config_length_class_id', '1', 0),
-	(329, 0, 'config', 'config_currency_auto', '1', 0),
-	(328, 0, 'config', 'config_currency', 'VND', 0),
-	(327, 0, 'config', 'config_admin_language', 'vi', 0),
-	(326, 0, 'config', 'config_language', 'vi', 0),
-	(325, 0, 'config', 'config_zone_id', '3755', 0),
-	(324, 0, 'config', 'config_country_id', '230', 0),
-	(323, 0, 'config', 'config_layout_id', '4', 0),
-	(322, 0, 'config', 'config_template', 'default', 0),
-	(320, 0, 'config', 'config_title', 'Your Store', 0),
-	(321, 0, 'config', 'config_meta_description', 'My Store', 0),
-	(319, 0, 'config', 'config_fax', '', 0),
-	(318, 0, 'config', 'config_telephone', '123456789', 0),
-	(317, 0, 'config', 'config_email', 'timgirldanhda@yahoo.com', 0),
-	(316, 0, 'config', 'config_address', 'Address 1', 0),
-	(315, 0, 'config', 'config_owner', 'iShop Từ Sơn', 0),
-	(314, 0, 'config', 'config_name', 'iShop Từ Sơn ', 0),
-	(401, 0, 'config', 'config_compression', '0', 0),
-	(402, 0, 'config', 'config_error_display', '1', 0),
-	(403, 0, 'config', 'config_error_log', '1', 0),
-	(404, 0, 'config', 'config_error_filename', 'error.txt', 0),
-	(405, 0, 'config', 'config_google_analytics', '', 0);
+	(724, 0, 'config', 'config_stock_display', '0', 0),
+	(725, 0, 'config', 'config_stock_warning', '0', 0),
+	(726, 0, 'config', 'config_stock_checkout', '0', 0),
+	(727, 0, 'config', 'config_stock_status_id', '5', 0),
+	(728, 0, 'config', 'config_affiliate_id', '4', 0),
+	(723, 0, 'config', 'config_complete_status_id', '5', 0),
+	(722, 0, 'config', 'config_order_status_id', '1', 0),
+	(721, 0, 'config', 'config_invoice_prefix', 'INV-2012-00', 0),
+	(720, 0, 'config', 'config_order_edit', '100', 0),
+	(719, 0, 'config', 'config_checkout_id', '5', 0),
+	(718, 0, 'config', 'config_guest_checkout', '1', 0),
+	(716, 0, 'config', 'config_account_id', '3', 0),
+	(717, 0, 'config', 'config_cart_weight', '1', 0),
+	(715, 0, 'config', 'config_customer_price', '0', 0),
+	(714, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
+	(713, 0, 'config', 'config_customer_group_id', '1', 0),
+	(712, 0, 'config', 'config_customer_online', '0', 0),
+	(711, 0, 'config', 'config_tax_customer', 'shipping', 0),
+	(709, 0, 'config', 'config_vat', '0', 0),
+	(710, 0, 'config', 'config_tax_default', 'shipping', 0),
+	(708, 0, 'config', 'config_tax', '1', 0),
+	(707, 0, 'config', 'config_voucher_max', '1000', 0),
+	(706, 0, 'config', 'config_voucher_min', '1', 0),
+	(705, 0, 'config', 'config_upload_allowed', 'jpg, JPG, jpeg, gif, png, txt', 0),
+	(704, 0, 'config', 'config_download', '1', 0),
+	(703, 0, 'config', 'config_review_status', '1', 0),
+	(702, 0, 'config', 'config_product_count', '0', 0),
+	(701, 0, 'config', 'config_admin_limit', '20', 0),
+	(700, 0, 'config', 'config_catalog_limit', '15', 0),
+	(699, 0, 'config', 'config_weight_class_id', '1', 0),
+	(698, 0, 'config', 'config_length_class_id', '1', 0),
+	(697, 0, 'config', 'config_currency_auto', '1', 0),
+	(695, 0, 'config', 'config_admin_language', 'vi', 0),
+	(696, 0, 'config', 'config_currency', 'VND', 0),
+	(694, 0, 'config', 'config_language', 'vi', 0),
+	(693, 0, 'config', 'config_zone_id', '3755', 0),
+	(692, 0, 'config', 'config_country_id', '230', 0),
+	(690, 0, 'config', 'config_template', 'ishopts', 0),
+	(691, 0, 'config', 'config_layout_id', '4', 0),
+	(689, 0, 'config', 'config_meta_description', 'My Store', 0),
+	(688, 0, 'config', 'config_title', 'Your Store', 0),
+	(687, 0, 'config', 'config_fax', '', 0),
+	(686, 0, 'config', 'config_telephone', '123456789', 0),
+	(683, 0, 'config', 'config_owner', 'iShop Từ Sơn', 0),
+	(685, 0, 'config', 'config_email', 'timgirldanhda@yahoo.com', 0),
+	(684, 0, 'config', 'config_address', 'Address 1', 0),
+	(682, 0, 'config', 'config_name', 'iShop Từ Sơn ', 0),
+	(774, 0, 'welcome', 'welcome_module', 'a:1:{i:1;a:5:{s:11:"description";a:2:{i:3;s:34:"&lt;p&gt;\r\n	rfyhdfjfgj&lt;/p&gt;\r\n";i:1;s:0:"";}s:9:"layout_id";s:1:"6";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:0:"";}}', 1),
+	(775, 0, 'bestseller', 'bestseller_module', 'a:1:{i:0;a:7:{s:5:"limit";s:1:"5";s:11:"image_width";s:2:"80";s:12:"image_height";s:2:"80";s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1);
 /*!40000 ALTER TABLE `setting` ENABLE KEYS */;
 
 
@@ -2555,15 +2541,15 @@ CREATE TABLE IF NOT EXISTS `url_alias` (
   `query` varchar(255) COLLATE utf8_bin NOT NULL,
   `keyword` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`url_alias_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=774 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=780 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table ishopts.url_alias: 9 rows
 /*!40000 ALTER TABLE `url_alias` DISABLE KEYS */;
 INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(704, 'product_id=48', 'ipod_classic'),
-	(773, 'category_id=20', 'desktops'),
-	(503, 'category_id=26', 'pc'),
-	(505, 'category_id=27', 'mac'),
+	(777, 'category_id=20', 'desktops'),
+	(778, 'category_id=26', 'pc'),
+	(779, 'category_id=27', 'mac'),
 	(730, 'manufacturer_id=8', 'apple'),
 	(772, 'information_id=4', 'about_us'),
 	(775, 'product_id=42', 'test'),
@@ -2607,7 +2593,7 @@ CREATE TABLE IF NOT EXISTS `user_group` (
 -- Dumping data for table ishopts.user_group: 2 rows
 /*!40000 ALTER TABLE `user_group` DISABLE KEYS */;
 INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
-	(1, 'Top Administrator', 'a:2:{s:6:"access";a:121:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:19:"catalog/information";i:5;s:20:"catalog/manufacturer";i:6;s:14:"catalog/option";i:7;s:15:"catalog/product";i:8;s:14:"catalog/review";i:9;s:18:"common/filemanager";i:10;s:13:"design/banner";i:11;s:13:"design/layout";i:12;s:14:"extension/feed";i:13;s:16:"extension/module";i:14;s:17:"extension/payment";i:15;s:18:"extension/shipping";i:16;s:15:"extension/total";i:17;s:16:"feed/google_base";i:18;s:19:"feed/google_sitemap";i:19;s:20:"localisation/country";i:20;s:21:"localisation/currency";i:21;s:21:"localisation/geo_zone";i:22;s:21:"localisation/language";i:23;s:25:"localisation/length_class";i:24;s:25:"localisation/order_status";i:25;s:26:"localisation/return_action";i:26;s:26:"localisation/return_reason";i:27;s:26:"localisation/return_status";i:28;s:25:"localisation/stock_status";i:29;s:22:"localisation/tax_class";i:30;s:21:"localisation/tax_rate";i:31;s:25:"localisation/weight_class";i:32;s:17:"localisation/zone";i:33;s:14:"module/account";i:34;s:16:"module/affiliate";i:35;s:13:"module/banner";i:36;s:17:"module/bestseller";i:37;s:15:"module/carousel";i:38;s:15:"module/category";i:39;s:15:"module/featured";i:40;s:18:"module/google_talk";i:41;s:18:"module/information";i:42;s:13:"module/latest";i:43;s:16:"module/slideshow";i:44;s:14:"module/special";i:45;s:12:"module/store";i:46;s:14:"module/welcome";i:47;s:24:"payment/authorizenet_aim";i:48;s:21:"payment/bank_transfer";i:49;s:14:"payment/cheque";i:50;s:11:"payment/cod";i:51;s:21:"payment/free_checkout";i:52;s:22:"payment/klarna_invoice";i:53;s:17:"payment/klarna_pp";i:54;s:14:"payment/liqpay";i:55;s:20:"payment/moneybookers";i:56;s:14:"payment/nochex";i:57;s:15:"payment/paymate";i:58;s:16:"payment/paypoint";i:59;s:13:"payment/payza";i:60;s:26:"payment/perpetual_payments";i:61;s:14:"payment/pp_pro";i:62;s:17:"payment/pp_pro_uk";i:63;s:19:"payment/pp_standard";i:64;s:15:"payment/sagepay";i:65;s:22:"payment/sagepay_direct";i:66;s:18:"payment/sagepay_us";i:67;s:19:"payment/twocheckout";i:68;s:28:"payment/web_payment_software";i:69;s:16:"payment/worldpay";i:70;s:27:"report/affiliate_commission";i:71;s:22:"report/customer_credit";i:72;s:22:"report/customer_online";i:73;s:21:"report/customer_order";i:74;s:22:"report/customer_reward";i:75;s:24:"report/product_purchased";i:76;s:21:"report/product_viewed";i:77;s:18:"report/sale_coupon";i:78;s:17:"report/sale_order";i:79;s:18:"report/sale_return";i:80;s:20:"report/sale_shipping";i:81;s:15:"report/sale_tax";i:82;s:14:"sale/affiliate";i:83;s:12:"sale/contact";i:84;s:11:"sale/coupon";i:85;s:13:"sale/customer";i:86;s:23:"sale/customer_blacklist";i:87;s:19:"sale/customer_group";i:88;s:10:"sale/order";i:89;s:11:"sale/return";i:90;s:12:"sale/voucher";i:91;s:18:"sale/voucher_theme";i:92;s:15:"setting/setting";i:93;s:13:"setting/store";i:94;s:16:"shipping/auspost";i:95;s:17:"shipping/citylink";i:96;s:14:"shipping/fedex";i:97;s:13:"shipping/flat";i:98;s:13:"shipping/free";i:99;s:13:"shipping/item";i:100;s:23:"shipping/parcelforce_48";i:101;s:15:"shipping/pickup";i:102;s:19:"shipping/royal_mail";i:103;s:12:"shipping/ups";i:104;s:13:"shipping/usps";i:105;s:15:"shipping/weight";i:106;s:11:"tool/backup";i:107;s:14:"tool/error_log";i:108;s:12:"total/coupon";i:109;s:12:"total/credit";i:110;s:14:"total/handling";i:111;s:16:"total/klarna_fee";i:112;s:19:"total/low_order_fee";i:113;s:12:"total/reward";i:114;s:14:"total/shipping";i:115;s:15:"total/sub_total";i:116;s:9:"total/tax";i:117;s:11:"total/total";i:118;s:13:"total/voucher";i:119;s:9:"user/user";i:120;s:20:"user/user_permission";}s:6:"modify";a:121:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:19:"catalog/information";i:5;s:20:"catalog/manufacturer";i:6;s:14:"catalog/option";i:7;s:15:"catalog/product";i:8;s:14:"catalog/review";i:9;s:18:"common/filemanager";i:10;s:13:"design/banner";i:11;s:13:"design/layout";i:12;s:14:"extension/feed";i:13;s:16:"extension/module";i:14;s:17:"extension/payment";i:15;s:18:"extension/shipping";i:16;s:15:"extension/total";i:17;s:16:"feed/google_base";i:18;s:19:"feed/google_sitemap";i:19;s:20:"localisation/country";i:20;s:21:"localisation/currency";i:21;s:21:"localisation/geo_zone";i:22;s:21:"localisation/language";i:23;s:25:"localisation/length_class";i:24;s:25:"localisation/order_status";i:25;s:26:"localisation/return_action";i:26;s:26:"localisation/return_reason";i:27;s:26:"localisation/return_status";i:28;s:25:"localisation/stock_status";i:29;s:22:"localisation/tax_class";i:30;s:21:"localisation/tax_rate";i:31;s:25:"localisation/weight_class";i:32;s:17:"localisation/zone";i:33;s:14:"module/account";i:34;s:16:"module/affiliate";i:35;s:13:"module/banner";i:36;s:17:"module/bestseller";i:37;s:15:"module/carousel";i:38;s:15:"module/category";i:39;s:15:"module/featured";i:40;s:18:"module/google_talk";i:41;s:18:"module/information";i:42;s:13:"module/latest";i:43;s:16:"module/slideshow";i:44;s:14:"module/special";i:45;s:12:"module/store";i:46;s:14:"module/welcome";i:47;s:24:"payment/authorizenet_aim";i:48;s:21:"payment/bank_transfer";i:49;s:14:"payment/cheque";i:50;s:11:"payment/cod";i:51;s:21:"payment/free_checkout";i:52;s:22:"payment/klarna_invoice";i:53;s:17:"payment/klarna_pp";i:54;s:14:"payment/liqpay";i:55;s:20:"payment/moneybookers";i:56;s:14:"payment/nochex";i:57;s:15:"payment/paymate";i:58;s:16:"payment/paypoint";i:59;s:13:"payment/payza";i:60;s:26:"payment/perpetual_payments";i:61;s:14:"payment/pp_pro";i:62;s:17:"payment/pp_pro_uk";i:63;s:19:"payment/pp_standard";i:64;s:15:"payment/sagepay";i:65;s:22:"payment/sagepay_direct";i:66;s:18:"payment/sagepay_us";i:67;s:19:"payment/twocheckout";i:68;s:28:"payment/web_payment_software";i:69;s:16:"payment/worldpay";i:70;s:27:"report/affiliate_commission";i:71;s:22:"report/customer_credit";i:72;s:22:"report/customer_online";i:73;s:21:"report/customer_order";i:74;s:22:"report/customer_reward";i:75;s:24:"report/product_purchased";i:76;s:21:"report/product_viewed";i:77;s:18:"report/sale_coupon";i:78;s:17:"report/sale_order";i:79;s:18:"report/sale_return";i:80;s:20:"report/sale_shipping";i:81;s:15:"report/sale_tax";i:82;s:14:"sale/affiliate";i:83;s:12:"sale/contact";i:84;s:11:"sale/coupon";i:85;s:13:"sale/customer";i:86;s:23:"sale/customer_blacklist";i:87;s:19:"sale/customer_group";i:88;s:10:"sale/order";i:89;s:11:"sale/return";i:90;s:12:"sale/voucher";i:91;s:18:"sale/voucher_theme";i:92;s:15:"setting/setting";i:93;s:13:"setting/store";i:94;s:16:"shipping/auspost";i:95;s:17:"shipping/citylink";i:96;s:14:"shipping/fedex";i:97;s:13:"shipping/flat";i:98;s:13:"shipping/free";i:99;s:13:"shipping/item";i:100;s:23:"shipping/parcelforce_48";i:101;s:15:"shipping/pickup";i:102;s:19:"shipping/royal_mail";i:103;s:12:"shipping/ups";i:104;s:13:"shipping/usps";i:105;s:15:"shipping/weight";i:106;s:11:"tool/backup";i:107;s:14:"tool/error_log";i:108;s:12:"total/coupon";i:109;s:12:"total/credit";i:110;s:14:"total/handling";i:111;s:16:"total/klarna_fee";i:112;s:19:"total/low_order_fee";i:113;s:12:"total/reward";i:114;s:14:"total/shipping";i:115;s:15:"total/sub_total";i:116;s:9:"total/tax";i:117;s:11:"total/total";i:118;s:13:"total/voucher";i:119;s:9:"user/user";i:120;s:20:"user/user_permission";}}'),
+	(1, 'Top Administrator', 'a:2:{s:6:"access";a:125:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:19:"catalog/information";i:5;s:20:"catalog/manufacturer";i:6;s:14:"catalog/option";i:7;s:15:"catalog/product";i:8;s:14:"catalog/review";i:9;s:18:"common/filemanager";i:10;s:13:"design/banner";i:11;s:13:"design/layout";i:12;s:14:"extension/feed";i:13;s:16:"extension/module";i:14;s:17:"extension/payment";i:15;s:18:"extension/shipping";i:16;s:15:"extension/total";i:17;s:16:"feed/google_base";i:18;s:19:"feed/google_sitemap";i:19;s:20:"localisation/country";i:20;s:21:"localisation/currency";i:21;s:21:"localisation/geo_zone";i:22;s:21:"localisation/language";i:23;s:25:"localisation/length_class";i:24;s:25:"localisation/order_status";i:25;s:26:"localisation/return_action";i:26;s:26:"localisation/return_reason";i:27;s:26:"localisation/return_status";i:28;s:25:"localisation/stock_status";i:29;s:22:"localisation/tax_class";i:30;s:21:"localisation/tax_rate";i:31;s:25:"localisation/weight_class";i:32;s:17:"localisation/zone";i:33;s:14:"module/account";i:34;s:16:"module/affiliate";i:35;s:13:"module/banner";i:36;s:17:"module/bestseller";i:37;s:15:"module/carousel";i:38;s:15:"module/category";i:39;s:15:"module/featured";i:40;s:18:"module/google_talk";i:41;s:18:"module/information";i:42;s:13:"module/latest";i:43;s:16:"module/slideshow";i:44;s:14:"module/special";i:45;s:12:"module/store";i:46;s:14:"module/welcome";i:47;s:24:"payment/authorizenet_aim";i:48;s:21:"payment/bank_transfer";i:49;s:14:"payment/cheque";i:50;s:11:"payment/cod";i:51;s:21:"payment/free_checkout";i:52;s:22:"payment/klarna_invoice";i:53;s:17:"payment/klarna_pp";i:54;s:14:"payment/liqpay";i:55;s:20:"payment/moneybookers";i:56;s:14:"payment/nochex";i:57;s:15:"payment/paymate";i:58;s:16:"payment/paypoint";i:59;s:13:"payment/payza";i:60;s:26:"payment/perpetual_payments";i:61;s:14:"payment/pp_pro";i:62;s:17:"payment/pp_pro_uk";i:63;s:19:"payment/pp_standard";i:64;s:15:"payment/sagepay";i:65;s:22:"payment/sagepay_direct";i:66;s:18:"payment/sagepay_us";i:67;s:19:"payment/twocheckout";i:68;s:28:"payment/web_payment_software";i:69;s:16:"payment/worldpay";i:70;s:27:"report/affiliate_commission";i:71;s:22:"report/customer_credit";i:72;s:22:"report/customer_online";i:73;s:21:"report/customer_order";i:74;s:22:"report/customer_reward";i:75;s:24:"report/product_purchased";i:76;s:21:"report/product_viewed";i:77;s:18:"report/sale_coupon";i:78;s:17:"report/sale_order";i:79;s:18:"report/sale_return";i:80;s:20:"report/sale_shipping";i:81;s:15:"report/sale_tax";i:82;s:14:"sale/affiliate";i:83;s:12:"sale/contact";i:84;s:11:"sale/coupon";i:85;s:13:"sale/customer";i:86;s:23:"sale/customer_blacklist";i:87;s:19:"sale/customer_group";i:88;s:10:"sale/order";i:89;s:11:"sale/return";i:90;s:12:"sale/voucher";i:91;s:18:"sale/voucher_theme";i:92;s:15:"setting/setting";i:93;s:13:"setting/store";i:94;s:16:"shipping/auspost";i:95;s:17:"shipping/citylink";i:96;s:14:"shipping/fedex";i:97;s:13:"shipping/flat";i:98;s:13:"shipping/free";i:99;s:13:"shipping/item";i:100;s:23:"shipping/parcelforce_48";i:101;s:15:"shipping/pickup";i:102;s:19:"shipping/royal_mail";i:103;s:12:"shipping/ups";i:104;s:13:"shipping/usps";i:105;s:15:"shipping/weight";i:106;s:11:"tool/backup";i:107;s:14:"tool/error_log";i:108;s:12:"total/coupon";i:109;s:12:"total/credit";i:110;s:14:"total/handling";i:111;s:16:"total/klarna_fee";i:112;s:19:"total/low_order_fee";i:113;s:12:"total/reward";i:114;s:14:"total/shipping";i:115;s:15:"total/sub_total";i:116;s:9:"total/tax";i:117;s:11:"total/total";i:118;s:13:"total/voucher";i:119;s:9:"user/user";i:120;s:20:"user/user_permission";i:121;s:14:"module/special";i:122;s:17:"module/bestseller";i:123;s:14:"module/welcome";i:124;s:13:"module/latest";}s:6:"modify";a:125:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:19:"catalog/information";i:5;s:20:"catalog/manufacturer";i:6;s:14:"catalog/option";i:7;s:15:"catalog/product";i:8;s:14:"catalog/review";i:9;s:18:"common/filemanager";i:10;s:13:"design/banner";i:11;s:13:"design/layout";i:12;s:14:"extension/feed";i:13;s:16:"extension/module";i:14;s:17:"extension/payment";i:15;s:18:"extension/shipping";i:16;s:15:"extension/total";i:17;s:16:"feed/google_base";i:18;s:19:"feed/google_sitemap";i:19;s:20:"localisation/country";i:20;s:21:"localisation/currency";i:21;s:21:"localisation/geo_zone";i:22;s:21:"localisation/language";i:23;s:25:"localisation/length_class";i:24;s:25:"localisation/order_status";i:25;s:26:"localisation/return_action";i:26;s:26:"localisation/return_reason";i:27;s:26:"localisation/return_status";i:28;s:25:"localisation/stock_status";i:29;s:22:"localisation/tax_class";i:30;s:21:"localisation/tax_rate";i:31;s:25:"localisation/weight_class";i:32;s:17:"localisation/zone";i:33;s:14:"module/account";i:34;s:16:"module/affiliate";i:35;s:13:"module/banner";i:36;s:17:"module/bestseller";i:37;s:15:"module/carousel";i:38;s:15:"module/category";i:39;s:15:"module/featured";i:40;s:18:"module/google_talk";i:41;s:18:"module/information";i:42;s:13:"module/latest";i:43;s:16:"module/slideshow";i:44;s:14:"module/special";i:45;s:12:"module/store";i:46;s:14:"module/welcome";i:47;s:24:"payment/authorizenet_aim";i:48;s:21:"payment/bank_transfer";i:49;s:14:"payment/cheque";i:50;s:11:"payment/cod";i:51;s:21:"payment/free_checkout";i:52;s:22:"payment/klarna_invoice";i:53;s:17:"payment/klarna_pp";i:54;s:14:"payment/liqpay";i:55;s:20:"payment/moneybookers";i:56;s:14:"payment/nochex";i:57;s:15:"payment/paymate";i:58;s:16:"payment/paypoint";i:59;s:13:"payment/payza";i:60;s:26:"payment/perpetual_payments";i:61;s:14:"payment/pp_pro";i:62;s:17:"payment/pp_pro_uk";i:63;s:19:"payment/pp_standard";i:64;s:15:"payment/sagepay";i:65;s:22:"payment/sagepay_direct";i:66;s:18:"payment/sagepay_us";i:67;s:19:"payment/twocheckout";i:68;s:28:"payment/web_payment_software";i:69;s:16:"payment/worldpay";i:70;s:27:"report/affiliate_commission";i:71;s:22:"report/customer_credit";i:72;s:22:"report/customer_online";i:73;s:21:"report/customer_order";i:74;s:22:"report/customer_reward";i:75;s:24:"report/product_purchased";i:76;s:21:"report/product_viewed";i:77;s:18:"report/sale_coupon";i:78;s:17:"report/sale_order";i:79;s:18:"report/sale_return";i:80;s:20:"report/sale_shipping";i:81;s:15:"report/sale_tax";i:82;s:14:"sale/affiliate";i:83;s:12:"sale/contact";i:84;s:11:"sale/coupon";i:85;s:13:"sale/customer";i:86;s:23:"sale/customer_blacklist";i:87;s:19:"sale/customer_group";i:88;s:10:"sale/order";i:89;s:11:"sale/return";i:90;s:12:"sale/voucher";i:91;s:18:"sale/voucher_theme";i:92;s:15:"setting/setting";i:93;s:13:"setting/store";i:94;s:16:"shipping/auspost";i:95;s:17:"shipping/citylink";i:96;s:14:"shipping/fedex";i:97;s:13:"shipping/flat";i:98;s:13:"shipping/free";i:99;s:13:"shipping/item";i:100;s:23:"shipping/parcelforce_48";i:101;s:15:"shipping/pickup";i:102;s:19:"shipping/royal_mail";i:103;s:12:"shipping/ups";i:104;s:13:"shipping/usps";i:105;s:15:"shipping/weight";i:106;s:11:"tool/backup";i:107;s:14:"tool/error_log";i:108;s:12:"total/coupon";i:109;s:12:"total/credit";i:110;s:14:"total/handling";i:111;s:16:"total/klarna_fee";i:112;s:19:"total/low_order_fee";i:113;s:12:"total/reward";i:114;s:14:"total/shipping";i:115;s:15:"total/sub_total";i:116;s:9:"total/tax";i:117;s:11:"total/total";i:118;s:13:"total/voucher";i:119;s:9:"user/user";i:120;s:20:"user/user_permission";i:121;s:14:"module/special";i:122;s:17:"module/bestseller";i:123;s:14:"module/welcome";i:124;s:13:"module/latest";}}'),
 	(10, 'Demonstration', '');
 /*!40000 ALTER TABLE `user_group` ENABLE KEYS */;
 
