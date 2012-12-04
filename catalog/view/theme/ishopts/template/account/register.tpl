@@ -9,11 +9,12 @@
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
   </div>
+    <div class="box-container">
   <h1><?php echo $heading_title; ?></h1>
-  <p><?php echo $text_account_already; ?></p>
   <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-    <h2><?php echo $text_your_details; ?></h2>
     <div class="content">
+        <p><?php echo $text_account_already; ?></p>
+        <h2><?php echo $text_your_details; ?></h2>
       <table class="form">
         <tr>
           <td><span class="required">*</span> <?php echo $entry_firstname; ?></td>
@@ -192,7 +193,7 @@
     </div>
     <?php } ?>
   </form>
-  <?php echo $content_bottom; ?></div>
+  <?php echo $content_bottom; ?></div></div>
 <script type="text/javascript"><!--
 $('input[name=\'customer_group_id\']:checked').live('change', function() {
 	var customer_group = [];

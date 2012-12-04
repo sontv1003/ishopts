@@ -33,12 +33,27 @@
         <?php foreach ($scripts as $script) { ?>
             <script type="text/javascript" src="<?php echo $script; ?>"></script>
         <?php } ?>
+        <!--[if  IE 8]>
+                <style>
+                #menu #search input {
+                    padding-top:5px;
+                     padding-bottom:3px;
+                }
+                .featured ul li .image2:hover, .product-grid .image:hover { border-color:#000;}
+                .success, #header #cart .content  { border:1px solid #e7e7e7;}
+                #currency a  span { padding-top:1px;}
+            </style>
+        <![endif]-->
+        <!--[if  IE 9]>
+                <style>
+                #currency a  span { padding-top:1px;}
+            </style>
+        <![endif]-->
         <!--[if IE 7]>
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/ishopts/stylesheet/ie7.css" />
         <![endif]-->
         <!--[if lt IE 7]>
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/ishopts/stylesheet/ie6.css" />
-        <script type="text/javascript" src="catalog/view/javascript/DD_belatedPNG_0.0.8a-min.js"></script>
         <script type="text/javascript">
         DD_belatedPNG.fix('#logo img');
         </script>
