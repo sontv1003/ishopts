@@ -8,7 +8,7 @@
 	margin-right: 0px;
 }
 #header #cart .content {
-
+	
 }
 #header #search {
 	position: inherit;
@@ -45,7 +45,7 @@
 	display: inline;
 }
 /* button */
-.product-info a.button span {
+.prduct-info a.button span {
 	line-height: 12px;
 	display: block;
 }

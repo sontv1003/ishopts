@@ -3,8 +3,9 @@
   <div class="box-content">
     <div class="box-product">
     <ul>
-      <?php foreach ($products as $product) { ?>
-      <li>
+      <?php $i=1; $record = 4;
+      foreach ($products as $product) { ?>
+      <li class="<?php if($i%$record ==1 || $i==1) echo 'first-in-line'; if($i%$record==0 && $i!=1) echo 'last-in-line'; $i++;?>">
         <?php if ($product['thumb']) { ?>
         <div class="image2"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
         <?php } ?>
