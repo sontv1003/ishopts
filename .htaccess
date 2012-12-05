@@ -10,7 +10,7 @@ Options +FollowSymlinks
 Options -Indexes
 
 # Prevent Direct Access to files
-<FilesMatch "\.(tpl|ini|log)">
+<FilesMatch "\.(tpl|ini|log|txt)">
  Order deny,allow
  Deny from all
 </FilesMatch>
@@ -19,7 +19,7 @@ Options -Indexes
 RewriteEngine On
 # If your opencart installation does not run on the main web folder make sure you folder it does run in ie. / becomes /shop/ 
 
-RewriteBase /
+#RewriteBase /
 RewriteRule ^sitemap.xml$ index.php?route=feed/google_sitemap [L]
 RewriteRule ^googlebase.xml$ index.php?route=feed/google_base [L]
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -48,6 +48,3 @@ RewriteRule ^([^?]*) index.php?_route_=$1 [L,QSA]
 
 # 6. set max time for input to be recieved. Uncomment this line if you have a lot of product options or are getting errors where forms are not saving all fields
 # php_value max_input_time 200
-
-# 7. disable open_basedir limitations
-# php_admin_value open_basedir none
