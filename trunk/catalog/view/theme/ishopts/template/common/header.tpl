@@ -18,6 +18,7 @@
         <?php } ?>
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/ishopts/stylesheet/stylesheet.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/ishopts/stylesheet/superfish.css" />
+        <link href="catalog/view/theme/ishopts/stylesheet/cloud-zoom.css" rel="stylesheet" type="text/css" />
         <?php foreach ($styles as $style) { ?>
             <link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>" media="<?php echo $style['media']; ?>" />
         <?php } ?>
@@ -30,6 +31,7 @@
         <script type="text/javascript" src="catalog/view/javascript/jquery/tabs.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/common.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/superfish.js"></script>
+        <script type="text/JavaScript" src="catalog/view/javascript/jquery/cloud-zoom/cloud-zoom.1.0.2.js"></script>
         <?php foreach ($scripts as $script) { ?>
             <script type="text/javascript" src="<?php echo $script; ?>"></script>
         <?php } ?>

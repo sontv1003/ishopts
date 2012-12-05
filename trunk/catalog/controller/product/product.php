@@ -1,5 +1,12 @@
 <?php  
-class ControllerProductProduct extends Controller {
+global $aFolder;
+                        if (!defined('HTTP_ADMIN')) define('HTTP_ADMIN','admin');
+                        $aFolder = preg_replace('/.*\/([^\/].*)\//is','$1',HTTP_ADMIN);
+                        if (!isset($GLOBALS['magictoolbox']['magiczoom']) && !isset($GLOBALS['magiczoom_module_loaded'])) {
+                            //include $aFolder.'/controller/module/magictoolbox/module.php';
+                            include (preg_match("/components\/com_(ayelshop|aceshop|mijoshop)\/opencart\//ims",__FILE__,$matches)?'components/com_'.$matches[1].'/opencart/':'').$aFolder.'/controller/module/magictoolbox/module.php';
+                        };
+                        class ControllerProductProduct extends Controller {
 	private $error = array(); 
 	
 	public function index() { 
@@ -204,7 +211,7 @@ class ControllerProductProduct extends Controller {
 			
 			$this->data['images'] = array();
 			
-			$results = $this->model_catalog_product->getProductImages($this->request->get['product_id']);
+			$results = $this->model_catalog_product->getProductImages($this->request->get['product_id']); $product_info['images'] = $results;
 			
 			foreach ($results as $result) {
 				$this->data['images'][] = array(
@@ -368,7 +375,7 @@ class ControllerProductProduct extends Controller {
 				'common/header'
 			);
 						
-			$this->response->setOutput($this->render());
+			$this->response->setOutput(magiczoom($this->render(TRUE),$this,'product',$product_info), $this->config->get('config_compression'));
 		} else {
 			$url = '';
 			

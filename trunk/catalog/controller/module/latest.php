@@ -1,4 +1,12 @@
 <?php
+                        global $aFolder;
+                        if (!defined('HTTP_ADMIN')) define('HTTP_ADMIN','admin');
+                        $aFolder = preg_replace('/.*\/([^\/].*)\//is','$1',HTTP_ADMIN);
+                        if (!isset($GLOBALS['magictoolbox']['magiczoom']) && !isset($GLOBALS['magiczoom_module_loaded'])) {
+                            //include $aFolder.'/controller/module/magictoolbox/module.php';
+                            //include (preg_match("/components\/com_ayelshop\/opencart\//ims",__FILE__)?'components/com_ayelshop/opencart/':'').$aFolder.'/controller/module/magictoolbox/module.php';
+                            include (preg_match("/components\/com_(ayelshop|aceshop|mijoshop)\/opencart\//ims",__FILE__,$matches)?'components/com_'.$matches[1].'/opencart/':'').$aFolder.'/controller/module/magictoolbox/module.php';
+                        };
 class ControllerModuleLatest extends Controller {
 	protected function index($setting) {
 		$this->language->load('module/latest');
@@ -66,7 +74,7 @@ class ControllerModuleLatest extends Controller {
 			$this->template = 'default/template/module/latest.tpl';
 		}
 
-		$this->render();
+		global $aFolder; include($aFolder.'/controller/module/magictoolbox/boxes.inc');
 	}
 }
 ?>
