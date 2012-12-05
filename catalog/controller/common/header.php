@@ -1,4 +1,10 @@
-<?php   
+<?php
+	global $aFolder;
+	if (!defined('HTTP_ADMIN')) define('HTTP_ADMIN','admin');
+	$aFolder = preg_replace('/.*\/([^\/].*)\//is','$1',HTTP_ADMIN);
+	if (!isset($GLOBALS['magictoolbox']['magiczoom']) && !isset($GLOBALS['magiczoom_module_loaded'])) {
+		//include $aFolder.'/controller/module/magictoolbox/module.php';
+	include (preg_match("/components\/com_(ayelshop|aceshop|mijoshop)\/opencart\//ims",__FILE__,$matches)?'components/com_'.$matches[1].'/opencart/':'').$aFolder.'/controller/module/magictoolbox/module.php';}   
 class ControllerCommonHeader extends Controller {
 	protected function index() {
 		$this->data['title'] = $this->document->getTitle();
@@ -139,6 +145,12 @@ class ControllerCommonHeader extends Controller {
 		}
 		
     	$this->render();
+		if($this->config->get('magiczoom_status') != 0) {
+			$tool  = magiczoom_load_core_class($this);
+			if(use_effect_on($tool)) {
+				$this->output = set_headers($this->output);
+			}
+		}
 	} 	
 }
 ?>

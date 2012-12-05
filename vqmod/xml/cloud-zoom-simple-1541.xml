@@ -1,0 +1,39 @@
+<!-- Created using vQmod XML Generator by UKSB - http://www.opencart-extensions.co.uk best edited in notepad++//-->
+<modification>
+	<id><![CDATA[cloud-zoom-simple vqmod for 1.5.3.1]]></id>
+	<version><![CDATA[0.2]]></version>
+	<vqmver><![CDATA[]]></vqmver>
+	<author><![CDATA[webrasta]]></author>
+<!--Header section. The following code insert cloud-zoom.css, jquery.min.js and cloud-zoom.1.0.2.js into the default header -->
+	<file name="catalog/view/theme/ishopts/template/common/header.tpl">
+		<operation>
+			<search position="after"><![CDATA[<link rel="stylesheet" type="text/css" href="catalog/view/theme/ishopts/stylesheet/stylesheet.css" />]]></search>
+			<add><![CDATA[<link href="catalog/view/theme/default/stylesheet/cloud-zoom.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/JavaScript" src="catalog/view/javascript/jquery/cloud-zoom/cloud-zoom.1.0.2.js"></script>]]></add>
+		</operation>
+	</file>
+<!--Product template. The following code edits the default product template namely the main product image and adds a link for viewing images through fancybox static viewer-->
+	<file name="catalog/view/theme/ishopts/template/product/product.tpl">
+		<operation>
+			<search position="replace"><![CDATA[<a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox" rel="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a>]]></search>
+<!--Customise by adding parameters after rel=" find parameters online at http://www.professorcloud.com/mainsite/cloud-zoom-integration.htm don't forget to seperate with ,s-->
+			<add><![CDATA[<a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="cloud-zoom" id='zoom1' rel="adjustX: 10, adjustY:-4, tint:'#000000',tintOpacity:0.2, zoomWidth:360">
+	  <img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a>
+	  ]]></add>
+		</operation>
+<!--The following code adds the primary image into the additional image div-->
+		<operation>
+			<search position="replace"><![CDATA[<div class="image-additional">]]></search>
+			<add><![CDATA[<div class="image-additional">
+		<a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="cloud-zoom-gallery" rel="useZoom: 'zoom1', smallImage: '<?php echo $thumb; ?>' "><img src="<?php echo $thumb; ?>" width="76" height="76" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a>
+			]]></add>
+		</operation>
+<!--The following code edits the additional images to cloud-zoom code and resizes them to 76 x 76 px-->
+		<operation>
+			<search position="replace"><![CDATA[<a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="colorbox" rel="colorbox"><img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>]]></search>
+			<add><![CDATA[<a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="cloud-zoom-gallery" rel="useZoom: 'zoom1', smallImage: '<?php echo $image['thumb']; ?>' "><img src="<?php echo $image['thumb']; ?>" width="76" height="76" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+			]]></add>
+		</operation>
+	</file>
+</modification>
