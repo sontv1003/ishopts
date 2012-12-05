@@ -624,7 +624,7 @@ label {
 .price {
 	font-size:14px;
 	line-height:normal;
-	color:#2e2e2e;
+	color:red;
 	font-weight:700;
 }
 .price .price-new  {margin-right:10px; color: red;}
@@ -1394,6 +1394,7 @@ filter: alpha(opacity=85);
 .box-relate .price, .box-relate .price-old, .box-relate .price-new {
     font-size: 13px !important;
     color: red !important;
+    padding: 0px !important;
 }
 
 .box-category ul {
@@ -1896,6 +1897,7 @@ position:relative; margin-left:-5px;
 	display: block;
 	min-height:30px;
 	margin-bottom:0px;
+        color: red;
 }
 .product-list .price { margin-bottom:10px;}
 .product-grid .price-old {
