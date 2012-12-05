@@ -9,6 +9,7 @@
         <div class="image2"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
         <?php } ?>
         <div class="name maxheight-feat"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
+        <div class="description"><?php echo $product['description']; ?></div>
         <?php if ($product['price']) { ?>
         <div class="price">
           <?php if (!$product['special']) { ?>
