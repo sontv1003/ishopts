@@ -14,7 +14,8 @@ body {
 	margin: 0px;
 	padding: 0px;
 	/*background:url(../image/body-bg.jpg) repeat-x #fff;*/
-        background: #F2F2F2;
+	background:url(../image/bg.jpg) repeat-x #fff;
+        
 	font-size:12px;
 	line-height:17px;
 }
@@ -183,8 +184,7 @@ label {
 }
 /* header */
 #header {
-	height:171px;
-        background: #000;
+	height:171px;        
 	margin-bottom: 0px;
 	position: relative;
 	z-index: 99;
@@ -552,10 +552,17 @@ label {
 /*****************************************************************************************************************************************************************************/
 /***************************************************************************************search**********************************************************************************/
 
-#search { position:relative;  width:219px; float:right; margin:20px 58px 0 0;}
+#search { position:relative;  width:219px; float:right; margin:8px 58px 0 0;}
 .search-bg {
 	display:inline-block;
-	background:url(../image/search-bg.jpg) repeat-x;
+        height: 20px;        
+	/*background:url(../image/search-bg.jpg) repeat-x;*/
+        -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+        border-radius: 15px;
+        background: #fff;
+        color: #000;            
+        overflow: hidden;
 }
 .search-title {
 	display:inline-block;
@@ -579,13 +586,12 @@ label {
 	top:0px;
 }
 #menu #search input {
-	background:url(../image/trans.png);
-	padding:4px 10px 5px 10px;
+	padding-left:10px;
 	width: 199px; 
  	border:none; 
 	font-size:12px; 
 	color:#000;
- 	height:18px;
+ 	height:15px;
 	margin:0;
 	outline:none;
 	line-height:15px;
@@ -1151,15 +1157,19 @@ a.button:hover span {
     padding:0px 0 0;
 }
 .box .box-heading {
-	padding:12px 0px 12px 20px;
-	font-size:15px;
-	font-weight:normal;
+	padding:5px 0px 5px 20px;
+	font-size:13px;
+	font-weight:bold;
+        text-shadow: 1px 1px 1px #224272;
 	line-height:normal;
-	color:#3a3a3a;
-	border-radius:3px 3px 0 0;
-	background:#f7f7f7;
-	text-transform:uppercase;
-	border-bottom:1px solid #f1f1f1;
+	color:#fff;
+        -moz-border-radius: 5px 5px 0 0;
+        -webkit-border-radius: 5px 5px 0 0;
+        border-radius: 5px 5px 0 0;
+	background:#596167;
+        background-image: none;
+	/*text-transform:uppercase;*/
+	border-bottom:1px solid #ccc;
 }
 
 
