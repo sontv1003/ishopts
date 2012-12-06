@@ -1,13 +1,23 @@
 /********************************************************************************************************************************************************************************/
 /* menu */
 #menu {
-	/*background: url('../image/tail-menu.gif') left top repeat-x #e0e0e0;*/
-        background: #EEEEEE;
-	min-height: 49px;
+	/*background: url('../image/bgmenu.png') left top repeat-x #e0e0e0;*/
+        position:relative;        
+        margin:18px auto 0;
+        z-index:10;
+        -webkit-border-radius:4px;
+        -moz-border-radius:4px;
+        border-radius:4px;
+        -webkit-box-shadow:rgba(0,0,0,0.3) 0 1px 2px;
+        -moz-box-shadow:rgba(0,0,0,0.3) 0 1px 2px;
+        box-shadow:rgba(0,0,0,0.3) 0 1px 2px;
+        font:12px/18px "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+        /*background: #EEEEEE;*/
+	min-height: 35px;
 	margin:0 auto 0px;
 	width:1064px;
 	padding:0;
-	border-bottom:2px solid #333333;
+	/*border-bottom:2px solid #333333;*/
 }
 #menu ul {
 	list-style: none;
@@ -35,7 +45,7 @@
 	text-align:left;
 	z-index: 1;
 	position: relative;
-	height:67px;
+	height:35px;
 	background:url(../image/menu-a.gif) 0 -1000px repeat-x;        
         
 	font-weight:bold;
@@ -47,8 +57,8 @@
 
 #menu > ul > li > a:hover, #menu > ul > li.sfHover > a, #menu > ul > li.active > a   {
     color:#fff; 
-    background-position:0 0;
-    /*background: #1aa4cc;*/
+    /*background-position:0 0;*/
+    background: url(../image/bgmenu_hover.png) repeat-x;
 }
 #menu > ul > li > ul {
 	display: none;
@@ -60,7 +70,7 @@
         opacity: 0.85;
         filter:alpha(opacity=85);
 	left:0px;
-	top:67px;
+	top:36px;
 	width:200px;
 	margin:0 !important;
         
