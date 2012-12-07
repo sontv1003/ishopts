@@ -48,7 +48,7 @@
   <div class="product-list">
       <ul>
     <?php $i=1;$record=4; foreach ($products as $product) { ?>
-    <li class="<?php if($i%$record ==1) echo 'first-in-line'; if($i==1) echo 'style:"margin-left:20px;"'; if($i%$record==0 && $i!=1) echo 'last-in-line'; $i++;?>">
+    <li <?php if($i%$record ==1 && $i!=1) echo 'class="first-in-line"'; if($i==1) echo ' style="margin-left:20px;"'; if($i%$record==0 && $i!=1) echo 'class="last-in-line"'; $i++;?>>
         <div class="right">  
             <div class="price">
                 <?php if (!$product['special']) { ?>

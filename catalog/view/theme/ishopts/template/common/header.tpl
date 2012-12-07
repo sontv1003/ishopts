@@ -82,7 +82,7 @@
                         <?php echo $cart; ?>
                         </div>
                     </div>                    
-                    <ul class="links">
+                    <ul class="links">                        
                         <li><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a></li>
                         <li><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a></li>
                         <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
@@ -110,6 +110,7 @@
             </script>
             <?php if ($categories) { ?>
                     <ul class="menu sf-js-enabled">
+                        <li class="bgHome"><a href="<?php echo $home; ?>"></a></li>
                         <?php foreach ($categories as $category) { ?>
                             <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
                                 <?php if ($category['children']) { ?>

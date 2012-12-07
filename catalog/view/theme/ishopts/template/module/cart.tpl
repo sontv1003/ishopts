@@ -16,8 +16,10 @@
               <?php foreach ($product['option'] as $option) { ?>
               - <small><?php echo $option['name']; ?> <?php echo $option['value']; ?></small><br />
               <?php } ?>
-            </div></td>
-          <td class="quantity">x&nbsp;<?php echo $product['quantity']; ?></td>
+            </div>
+            <b>x&nbsp;<?php echo $product['quantity']; ?></b>
+          </td>
+          <!--<td class="quantity"></td>-->
           <td class="total"><?php echo $product['total']; ?></td>
           <td class="remove"><span><img src="catalog/view/theme/ishopts/image/close.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" onclick="(getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') ? location = 'index.php?route=checkout/cart&remove=<?php echo $product['key']; ?>' : $('#cart').load('index.php?route=module/cart&remove=<?php echo $product['key']; ?>' + ' #cart > *');" /></span></td>
         </tr>

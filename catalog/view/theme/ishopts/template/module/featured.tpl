@@ -17,7 +17,7 @@
         <!--<div class="description"><?php echo $product['description'];?></div>-->
         
         <?php if ($product['price']) { ?>
-        <div class="price" style="height: 30px;">
+        <div class="price">
           <?php if (!$product['special']) { ?>
           <?php echo $product['price']; ?>
           <?php } else { ?>

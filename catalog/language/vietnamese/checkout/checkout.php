@@ -3,7 +3,7 @@
 $_['heading_title']                  = 'Thanh Toán';
 
 // Text
-$_['text_cart']                    = 'Giỏ Hàng';
+$_['text_cart']                      = 'Giỏ Hàng';
 $_['text_checkout_option']           = 'Bước 1: Tùy Chọn Thanh Toán';
 $_['text_checkout_account']          = 'Bước 2: Tài Khoản &amp; Chi Tiết Thanh Toán';
 $_['text_checkout_payment_address']  = 'Bước 2: Chi Tiết Thanh Toán';
