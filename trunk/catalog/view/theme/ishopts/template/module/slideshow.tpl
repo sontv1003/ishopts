@@ -1,4 +1,4 @@
-<div class="slideshow">
+<div class="slideshow" style="width: 1000px;">
   <div id="slideshow<?php echo $module; ?>" class="nivoSlider" style="width: <?php echo $width; ?>px; height: <?php echo $height; ?>px;">
     <?php foreach ($banners as $banner) { ?>
     <?php if ($banner['link']) { ?>
