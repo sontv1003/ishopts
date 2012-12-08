@@ -1,39 +1,13 @@
 /********************************************************************************************************************************************************************************/
 /* menu */
 #menu {
-	/*background: url('../image/bgmenu.png') left top repeat-x #e0e0e0;*/
-        width:192px;
-        height:40px; 
-        border-right:1px solid #5d5d5d; 
-        border-left:1px solid #929292; 
-        border-bottom:1px solid #575757;
-        border-top:1px solid #797979;
-        background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #787878), color-stop(0.5, #5E5E5E), color-stop(0.51, #707070), color-stop(1, #838383));
-        background-image: -moz-linear-gradient(center bottom, #787878 0%, #5E5E5E 50%, #707070 51%, #838383 100%);
-        background-color:#5f5f5f;
-        position:relative;        
-        margin:18px auto 0;
-        z-index:10;
-        -webkit-border-radius:4px;
-        -moz-border-radius:4px;
-        border-radius:4px;
-        -webkit-box-shadow:rgba(0,0,0,0.3) 0 1px 2px;
-        -moz-box-shadow:rgba(0,0,0,0.3) 0 1px 2px;
-        box-shadow:rgba(0,0,0,0.3) 0 1px 2px;
-        font:12px/18px "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-	min-height: 35px;
+	background: url('../image/tail-menu.gif') left top repeat-x #e0e0e0;
+        /*background: #EEEEEE;*/
+	min-height: 49px;
 	margin:0 auto 0px;
-	width:1064px;
+	width:1024px;
 	padding:0;
-	/*border-bottom:2px solid #333333;*/
-        
-        -moz-border-radius:4px;
-        -webkit-border-radius:4px;
-        border-radius:4px;
-
-        -moz-box-shadow: 0px 3px 3px #cecece;
-        -webkit-box-shadow: 0px 3px 3px #cecece;
-        box-shadow: 0 3px 4px #8b8b8b;
+	border-bottom:2px solid #333333;
 }
 #menu ul {
 	list-style: none;
@@ -42,21 +16,18 @@
 	
 }
 #menu > ul { width:750px; padding-left:0px; float:left;}
-#menu > ul > li:first-child {
-    border-left: none;
-}
 #menu > ul > li {
 	float: left;
 	z-index: 10;
 	padding:0px 1px 0px 0px;
 	position:relative;
-	border-right: 1px solid #5D5D5D;
-        border-left: 1px solid #929292;  
+	background:url(../image/separator.gif) right top no-repeat;
 	width:135px;
 }
+
 #menu > ul > li > a {
 	font-size: 12px;
-	color: #fff;        
+	color: #373737;
 	line-height: 16px;
 	text-decoration: none;
 	display:table-cell;
@@ -64,8 +35,8 @@
 	text-align:left;
 	z-index: 1;
 	position: relative;
-	height:40px;
-        text-shadow: 0 -1px 1px #202020;
+	height:67px;
+	background:url(../image/menu-a.gif) 0 -1000px repeat-x;             
 	font-weight:bold;
 	text-transform:uppercase;
 	vertical-align:middle;
@@ -74,14 +45,9 @@
 
 
 #menu > ul > li > a:hover, #menu > ul > li.sfHover > a, #menu > ul > li.active > a   {
-        color:#fff;     
-        background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #3F3F3F), color-stop(0.5, #383838), color-stop(0.51, #434343), color-stop(1, #555555));
-        background-image: -moz-linear-gradient(center bottom, #3F3F3F 0%, #383838 50%, #434343 51%, #555555 100% );
-        background-color:#383838;	
-        /* We use the inset of the box shadow to create a subtle inner glow when hovering */
-        -moz-box-shadow: inset 0 0 5px 5px #535353;
-        -webkit-box-shadow: inset 0 0 5px 5px #535353;
-        box-shadow: inset 0 0 5px 5px #535353;
+    color:#fff; 
+    background-position:0 0;
+    /*background: #6d6d6d;*/
 }
 #menu > ul > li > ul {
 	display: none;
@@ -93,7 +59,7 @@
         opacity: 0.85;
         filter:alpha(opacity=85);
 	left:0px;
-	top:40px;
+	top:67px;
 	width:200px;
 	margin:0 !important;
         
@@ -115,7 +81,7 @@
 }
 #menu > ul > li ul > li.last > a{ border:none;}
 #menu > ul > li ul > li > a:hover, #menu > ul > li ul > li.menu-a > a, #menu > ul > li ul > li.sfHover > a {
-	color:#747575;
+	color:#747575;        
 }
 #menu > ul > li > ul > ul > li:last-child > a { border:none}
 #menu > ul > li > ul > ul > li {
@@ -168,10 +134,3 @@
  
 }
 #menu  ul li li:hover img { display:none;} 
-
-#menu ul li.bgHome {
-    background: url('../image/apple_icon.png') center 4px no-repeat;
-}
-#menu ul li.bgHome a {
-    background: url('../image/apple_icon.png') center 4px no-repeat transparent;   
-}

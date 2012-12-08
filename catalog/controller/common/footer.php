@@ -8,7 +8,7 @@ class ControllerCommonFooter extends Controller {
 		$this->data['text_extra'] = $this->language->get('text_extra');
 		$this->data['text_contact'] = $this->language->get('text_contact');
 		$this->data['text_return'] = $this->language->get('text_return');
-    	$this->data['text_sitemap'] = $this->language->get('text_sitemap');
+                $this->data['text_sitemap'] = $this->language->get('text_sitemap');
 		$this->data['text_manufacturer'] = $this->language->get('text_manufacturer');
 		$this->data['text_voucher'] = $this->language->get('text_voucher');
 		$this->data['text_affiliate'] = $this->language->get('text_affiliate');
@@ -29,11 +29,11 @@ class ControllerCommonFooter extends Controller {
 					'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
 				);
 			}
-    	}
+                }
 
 		$this->data['contact'] = $this->url->link('information/contact');
 		$this->data['return'] = $this->url->link('account/return/insert', '', 'SSL');
-    	$this->data['sitemap'] = $this->url->link('information/sitemap');
+                $this->data['sitemap'] = $this->url->link('information/sitemap');
 		$this->data['manufacturer'] = $this->url->link('product/manufacturer');
 		$this->data['voucher'] = $this->url->link('account/voucher', '', 'SSL');
 		$this->data['affiliate'] = $this->url->link('affiliate/account', '', 'SSL');

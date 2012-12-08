@@ -17,9 +17,9 @@
               - <small><?php echo $option['name']; ?> <?php echo $option['value']; ?></small><br />
               <?php } ?>
             </div>
-            <b>x&nbsp;<?php echo $product['quantity']; ?></b>
+            <span class="quantity"><b>x&nbsp;1</b></span>
           </td>
-          <!--<td class="quantity"></td>-->
+          <!--<td class="quantity">x&nbsp;<?php echo $product['quantity']; ?></td>-->
           <td class="total"><?php echo $product['total']; ?></td>
           <td class="remove"><span><img src="catalog/view/theme/ishopts/image/close.png" alt="<?php echo $button_remove; ?>" title="<?php echo $button_remove; ?>" onclick="(getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') ? location = 'index.php?route=checkout/cart&remove=<?php echo $product['key']; ?>' : $('#cart').load('index.php?route=module/cart&remove=<?php echo $product['key']; ?>' + ' #cart > *');" /></span></td>
         </tr>

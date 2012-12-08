@@ -18,7 +18,6 @@
         <?php } ?>
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/ishopts/stylesheet/stylesheet.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/ishopts/stylesheet/superfish.css" />
-        <link href="catalog/view/theme/ishopts/stylesheet/cloud-zoom.css" rel="stylesheet" type="text/css" />
         <?php foreach ($styles as $style) { ?>
             <link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>" media="<?php echo $style['media']; ?>" />
         <?php } ?>
@@ -31,7 +30,6 @@
         <script type="text/javascript" src="catalog/view/javascript/jquery/tabs.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/common.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/superfish.js"></script>
-        <script type="text/JavaScript" src="catalog/view/javascript/jquery/cloud-zoom/cloud-zoom.1.0.2.js"></script>
         <?php foreach ($scripts as $script) { ?>
             <script type="text/javascript" src="<?php echo $script; ?>"></script>
         <?php } ?>
@@ -70,7 +68,7 @@
 	</script>
     </head>
     <body>
-        <div id="main-shining">
+        <div class="main-shining">
             <div class="row-1">
             <div id="header">
                 <?php if ($logo) { ?>
@@ -82,7 +80,7 @@
                         <?php echo $cart; ?>
                         </div>
                     </div>                    
-                    <ul class="links">                        
+                    <ul class="links">
                         <li><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a></li>
                         <li><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a></li>
                         <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
@@ -110,7 +108,7 @@
             </script>
             <?php if ($categories) { ?>
                     <ul class="menu sf-js-enabled">
-                        <li class="bgHome"><a href="<?php echo $home; ?>"></a></li>
+                        <li><a href="<?php echo $informations['href'];?>"><?php echo $informations['title'];?></a></li>
                         <?php foreach ($categories as $category) { ?>
                             <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
                                 <?php if ($category['children']) { ?>
@@ -127,6 +125,7 @@
                                     </ul></ul>
                             </li>
                         <?php } ?>
+                        <li><a href="<?php echo $contact;?>"><?php echo $text_contact;?></a></li>
                     </ul>
             <?php } ?>
                 <div id="search">
