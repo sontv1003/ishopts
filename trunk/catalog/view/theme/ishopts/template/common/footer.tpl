@@ -1,6 +1,13 @@
 <div class="footer-wrap">
 <div id="footer">
 <div class="wrapper">
+    <div class="column footer_info" style="width: 310px;">
+        <ul>
+            <li>Địa chỉ: 227 Trần Phú - Thị xã Từ Sơn - Bắc Ninh</li>
+            <li>Điện thoại: 096.808.9988</li>
+            <li>Email: ishop227tpts@hotmail.com</li>            
+        </ul>
+  </div>
   <?php if ($informations) { ?>
   <div class="column">
     <h3><?php echo $text_information; ?></h3>
@@ -49,17 +56,4 @@ OpenCart is open source software and you are free to remove the powered by OpenC
 Please donate via PayPal to donate@opencart.com
 //-->
 </div></div>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36879755-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
 </body></html>

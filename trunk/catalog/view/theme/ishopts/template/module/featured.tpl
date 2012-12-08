@@ -17,7 +17,7 @@
         <!--<div class="description"><?php echo $product['description'];?></div>-->
         
         <?php if ($product['price']) { ?>
-        <div class="price">
+        <div class="price" style="height: 30px;">
           <?php if (!$product['special']) { ?>
           <?php echo $product['price']; ?>
           <?php } else { ?>
@@ -26,7 +26,9 @@
           <?php } ?>
         </div>
         <?php } ?>
-        <div class="cart"><a data-id="<?php echo $product['product_id']; ?>" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button addToCart" /><span><?php echo $button_cart; ?></span></a></div>
+        <div class="cart">
+            <a data-id="<?php echo $product['product_id']; ?>" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button addToCart" /><span><?php echo $button_cart; ?></span></a>
+        </div>
       </li>
       <?php } ?>
     </ul>
