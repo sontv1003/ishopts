@@ -3237,3 +3237,24 @@ div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top 
 .jcarousel-skin-opencart {
     margin-top: 20px;
 }
+.box-livechat {
+     padding: 10px 10px 10px 10px !important;
+}
+ul.livechat {
+
+}
+ul.livechat li {
+    margin-bottom: 10px;
+}
+ul.livechat span {
+    float: right;
+}
+ul.livechat label {
+    float: left;
+    margin-top: 3px;
+    width: 75px;   
+    text-align: left;
+    font-size: 13px;
+    color: #333;
+    font-weight: bold;
+}
