@@ -22,8 +22,8 @@ $_['entry_captcha']	 = 'Nhập các ký tự bên dưới:';
 $_['email_subject']      = 'Tiêu đề %s';
 
 // Errors
-$_['error_name']         = 'Tên của bạn phải nhiều hơn 3 và nhỏ hơn 32 ký tự!';
+$_['error_name']         = 'Tên nhiều hơn 3 và nhỏ hơn 32 ký tự!';
 $_['error_email']        = 'Bạn phải điền chính xác Email!';
-$_['error_enquiry']      = 'Nội dung liên hệ phải nhiều hơn 10 và nhỏ hơn 3000 ký tự!';
+$_['error_enquiry']      = 'Nội dung từ 10 đên 3000 ký tự!';
 $_['error_captcha']	 = 'Bạn đã nhập mã xác nhận không chính xác!';
 ?>
