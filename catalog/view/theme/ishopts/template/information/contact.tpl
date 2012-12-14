@@ -115,9 +115,8 @@
     </div>
     <div class="clear"></div>
     <div class="buttons">
-      <div class="right"><input type="submit" value="<?php echo $button_continue; ?>" class="button" /></div>
+      <div class="left"><input type="submit" value="<?php echo $button_continue; ?>" class="button" /></div>
     </div>
   </form>
-  <div>sssssssssss</div>
   <?php echo $content_bottom; ?></div>
 <?php echo $footer; ?>
