@@ -355,6 +355,9 @@
   </div>
   <?php } ?>
   <?php echo $content_bottom; ?></div>
+<div class="fb-comments">
+        <fb:comments href="http://www.ishopts.com" width=728" num_posts="20"></fb:comments>
+</div>
 <script type="text/javascript"><!--
 $('.colorbox').colorbox({
 	overlayClose: true,

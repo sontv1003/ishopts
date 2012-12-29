@@ -5,7 +5,7 @@
         <ul>
             <li>Địa chỉ: 227 Trần Phú - Thị xã Từ Sơn - Bắc Ninh</li>
             <li>Điện thoại: 096.808.9988</li>
-            <li>Email: ishop227tpts@hotmail.com</li>            
+            <li>Email & FaceTime: ishop227tpts@hotmail.com</li>            
         </ul>
   </div>
   <?php if ($informations) { ?>
