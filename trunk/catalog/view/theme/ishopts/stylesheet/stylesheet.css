@@ -314,7 +314,7 @@ label {
 } 
 #header #cart .heading  span {
 	padding:0px 0px 10px 0;
-	color: #b0b0b0;
+	color: #333;
 	text-decoration: none;
 	font-size:12px;
 	font-family:Arial, Helvetica, sans-serif;
@@ -429,7 +429,7 @@ label {
 	padding-bottom:20px;
 }
 #header #cart .heading b {
-	color: #b0b0b0;
+	color: #FF6500;
 	font-size:12px;
 	margin-top: 1px;
 	padding-top:0px;
@@ -446,7 +446,11 @@ label {
 }
 
 .cart-position { 
-	float:right;
+	float: right;
+z-index: 100;
+position: absolute;
+top: -22px;
+right: 10px;
 }
 .cart-text {
 	background:url(../image/cart-text.png) no-repeat;
@@ -466,7 +470,7 @@ label {
 .cart-text  span { display:block; padding-left:32px;}
 /****************************************************************************************************************************************************************************************/
 #header #welcome a{ 
-	color:#fff;
+	color:#FF6500;
 	text-decoration:none;
 	margin:0 3px;
 }
@@ -487,6 +491,7 @@ label {
 #header .links {
 	font-size: 10px;
 	float:right;
+margin-right: 20px;
 }
 
 #header .links a:hover, #header .links a.active {
@@ -563,10 +568,15 @@ label {
 /***************************************************************************************search**********************************************************************************/
 
 #search { 
-    position:relative; 
+    position:absolute; 
+    top: -150px;
+    right: 40px;
     width:219px;
     float:right;
-    margin:20px 50px 0 0;}
+    z-index: 100;
+    /*margin:20px 50px 0 0;*/
+}
+
 .search-bg {
 	display:inline-block;
 	background:url(../image/search-bg.jpg) repeat-x;
@@ -593,10 +603,12 @@ label {
 	top:0px;
 }
 #menu #search input {
-	background:url(../image/trans.png);
-	padding:4px 10px 5px 10px;
+	/*background:url(../image/trans.png);*/
+        background: #fff;
+        /*border-radius: 5px;*/
+        padding:4px 10px 4px 10px;
 	width: 199px; 
- 	border:none; 
+ 	border:1px solid #ccc; 
 	font-size:12px; 
 	color:#000;
  	height:18px;
