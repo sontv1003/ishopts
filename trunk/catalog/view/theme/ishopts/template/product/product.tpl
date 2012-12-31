@@ -1,3 +1,6 @@
+<?php
+    $url_site = $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+?>
 <?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
 <div id="content"><?php echo $content_top; ?>
   <div class="breadcrumb">
@@ -236,7 +239,8 @@
              <!-- AddThis Button BEGIN -->
             <div class="addthis_toolbox addthis_default_style ">
                 <a class="addthis_button_compact"><?php echo $text_share; ?></a> <a class="addthis_button_email"></a><a class="addthis_button_print"></a> <a class="addthis_button_facebook"></a> <a class="addthis_button_twitter"></a>
-
+<!-- Facebook Like -->
+                <fb:like href="http://<?php echo $url_site; ?>" send="true" layout="button_count" width="450" show_faces="true"></fb:like>
             </div>
             <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js"></script> 
             <!-- AddThis Button END -->
@@ -355,8 +359,9 @@
   </div>
   <?php } ?>
   <?php echo $content_bottom; ?></div>
+<fb:like href="http://<?php echo $url_site ?>" send="true" width="728" show_faces="false"></fb:like>
 <div class="fb-comments">
-        <fb:comments href="http://www.ishopts.com" width=728" num_posts="20"></fb:comments>
+        <fb:comments href="http://<?php echo $url_site ?>" width=728" num_posts="20"></fb:comments>
 </div>
 <script type="text/javascript"><!--
 $('.colorbox').colorbox({
