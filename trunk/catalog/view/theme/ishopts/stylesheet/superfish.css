@@ -48,8 +48,8 @@
 
 #menu > ul > li > a:hover, #menu > ul > li.sfHover > a, #menu > ul > li.active > a   {
     color:#fff; 
-    background-position:0 0;
-    /*background: #6d6d6d;*/
+    /*background-position:0 0;*/
+    background: #F68E1F;
 }
 #menu > ul > li > ul {
 	display: none;
